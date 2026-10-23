@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects & Work Showcase | Mohammed Ashar S - Software Developer</title>
+
+  <!-- SEO & Social Meta Tags -->
+  <meta name="description"
+    content="Browse the complete portfolio of Mohammed Ashar S featuring 15+ live client WordPress websites, custom ERPNext systems, full stack applications, AI computer vision models, and IoT prototypes.">
+  <meta name="keywords"
+    content="Mohammed Ashar Projects, WordPress Developer Portfolio, Elementor Pro Projects, ERPNext, Full Stack, Python, YOLOv8, Computer Vision, Innopix, Bellfabs, Ashwini Digital">
+  <meta name="author" content="Mohammed Ashar S">
+
+  <!-- Favicon Logo -->
+  <link rel="icon" type="image/png" href="assets/images/Ashar_logo.png">
+
+  <!-- Google Fonts: Plus Jakarta Sans & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Bootstrap 5.3.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="projects-page-wrapper">
+
+  <!-- ======================================================================
+       1. SITE HEADER (DUAL-STATE: NORMAL FULL-WIDTH -> FLOATING PILL ON SCROLL)
+       ====================================================================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-nav-box" id="headerNavBox">
+
+      <!-- Left: Brand Logo -->
+      <a href="index.html" class="brand-logo-link" title="Mohammed Ashar - Portfolio">
+        <img src="assets/images/Ashar_logo.png" alt="Ashar Logo" class="brand-logo-img">
+      </a>
+
+      <!-- Center: Navigation Links -->
+      <ul class="nav-center-menu" id="navCenterMenu">
+        <li class="nav-item">
+          <a href="index.html" class="nav-link-custom">Home</a>
+        </li>
+        <li class="nav-item">
+          <a href="index.html#skills" class="nav-link-custom">Skills</a>
+        </li>
+        <li class="nav-item">
+          <a href="index.html#about" class="nav-link-custom">About</a>
+        </li>
+        <li class="nav-item">
+          <a href="projects.html" class="nav-link-custom active">Projects</a>
+        </li>
+        <li class="nav-item">
+          <a href="index.html#education" class="nav-link-custom">Education</a>
+        </li>
+        <li class="nav-item">
+          <a href="index.html#contact" class="nav-link-custom">Contact</a>
+        </li>
+      </ul>
+
+      <!-- Right: Download Resume Button & Mobile Toggle -->
+      <div class="header-right-actions">
+        <a href="assets/docs/Mohammed_Ashar_Resume.pdf" download="Mohammed_Ashar_Resume.pdf"
+          class="btn-header-resume btn-animation d-none d-xl-inline-flex" id="headerResumeBtn"
+          title="Download Mohammed Ashar's Resume PDF">
+          <span class="btn-anim-icon"><i class="bi bi-download"></i></span>
+          <span class="btn-anim-text">Download Resume</span>
+        </a>
+
+        <!-- Mobile / Tablet Hamburger Toggle Button -->
+        <button class="mobile-toggle-btn" id="mobileToggleBtn" aria-label="Toggle navigation menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+  <aside class="mobile-nav-drawer" id="mobileNavDrawer" aria-label="Mobile Navigation Menu">
+    <div class="drawer-header">
+      <a href="index.html" class="brand-logo-link" title="Mohammed Ashar">
+        <img src="assets/images/Ashar_logo.png" alt="Ashar Logo" class="brand-logo-img drawer-logo-img">
+      </a>
+      <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="Close menu">
+        <i class="bi bi-x-lg"></i>
+      </button>
+    </div>
+
+    <ul class="drawer-menu-list">
+      <li><a href="index.html" class="drawer-link">Home <i class="bi bi-arrow-right-short text-muted"></i></a></li>
+      <li><a href="index.html#skills" class="drawer-link">Skills <i class="bi bi-arrow-right-short text-muted"></i></a></li>
+      <li><a href="index.html#about" class="drawer-link">About Me <i class="bi bi-arrow-right-short text-muted"></i></a></li>
+      <li><a href="projects.html" class="drawer-link active fw-bold text-primary">All Projects <i
+            class="bi bi-arrow-up-right-square"></i></a></li>
+      <li><a href="index.html#education" class="drawer-link">Education <i class="bi bi-arrow-right-short text-muted"></i></a></li>
+      <li><a href="index.html#experience" class="drawer-link">Work Experience <i
+            class="bi bi-arrow-right-short text-muted"></i></a></li>
+      <li><a href="index.html#contact" class="drawer-link">Contact <i
+            class="bi bi-arrow-right-short text-muted"></i></a></li>
+    </ul>
+  </aside>
+
+  <!-- ======================================================================
+       2. HERO BANNER: PORTFOLIO / MY PROJECTS (Exact Match to User Reference Image)
+       ====================================================================== -->
+  <section class="projects-hero-section" id="projectsHero">
+    <!-- Giant Typography Background Layer: "PROJECTS" (Like "MOHAMMED" on Home Page) -->
+    <div class="projects-hero-watermark" aria-hidden="true">PROJECTS</div>
+
+    <div class="custom-container position-relative">
+      <div class="projects-hero-inner">
+
+        <!-- Section Tag: Portfolio -->
+        <div class="projects-hero-tag">Portfolio</div>
+
+        <!-- Page Heading: My projects with Signature Blue Circle Accent Style (Matches Home Page Headings) -->
+        <h1 class="projects-hero-title">
+          <span class="projects-hero-accent-wrap"><span class="projects-hero-circle-bg"></span>M</span>y projects
+        </h1>
+
+        <!-- Subtitle Description -->
+        <p class="projects-hero-desc">
+          Here are some of the websites and digital solutions I have built. Each project represents a step in my journey
+          of learning, creating and growing as a developer.
+        </p>
+
+        <!-- Signature Blue Horizontal Accent Line -->
+        <div class="projects-hero-divider" aria-hidden="true"></div>
+
+        <!-- Interactive Tabs Section (All Projects, Wordpress, Dashboard UI, Landing Page, AI/ML & IOT) -->
+        <div class="projects-tabs-row" role="tablist" aria-label="Filter projects by category">
+          <button type="button" class="project-tab-pill active" data-filter="all">
+            <span>All Projects</span>
+          </button>
+          <button type="button" class="project-tab-pill" data-filter="wordpress">
+            <span>Wordpress</span>
+          </button>
+          <button type="button" class="project-tab-pill" data-filter="dashboard">
+            <span>Dashboard UI</span>
+          </button>
+          <button type="button" class="project-tab-pill" data-filter="landingpage">
+            <span>Landing Page</span>
+          </button>
+          <button type="button" class="project-tab-pill" data-filter="aiml-iot">
+            <span>AI/ML &amp; IOT</span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       3. SUB-BAR: LIVE SEARCH & COUNTER (Integrated seamlessly)
+       ====================================================================== -->
+  <div class="projects-subbar-wrap">
+    <div class="custom-container">
+      <div class="projects-subbar-row">
+        <div class="projects-counter-text">
+          Showing <span id="visibleProjectsCount" class="projects-counter-badge">14</span> projects
+        </div>
+
+        <!-- Real-Time Search Box -->
+        <div class="projects-search-box">
+          <i class="bi bi-search projects-search-icon"></i>
+          <input type="text" class="projects-search-input" id="projectSearchInput"
+            placeholder="Search projects by keyword or tech..." autocomplete="off"
+            aria-label="Search projects by name or technology">
+          <button type="button" class="projects-search-clear" id="projectSearchClear" aria-label="Clear search">
+            <i class="bi bi-x-circle-fill"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       4. PROJECTS GRID SHOWCASE
+       ====================================================================== -->
+  <main class="projects-main-section">
+    <div class="custom-container">
+
+      <!-- Empty State (Shown when search/filter has 0 matches) -->
+      <div class="projects-empty-state" id="projectsEmptyState">
+        <div class="projects-empty-icon">
+          <i class="bi bi-folder-x"></i>
+        </div>
+        <h3 class="projects-empty-title">No matching projects found</h3>
+        <p class="projects-empty-desc">
+          We couldn't find any projects matching your current filter or search query. Try searching for different
+          keywords like "WordPress", "Python", "Elementor", or reset your filters.
+        </p>
+        <button type="button" class="btn-reset-filter" id="btnResetFilter">
+          <i class="bi bi-arrow-counterclockwise me-1"></i> Reset All Filters
+        </button>
+      </div>
+
+      <!-- 2-Column Responsive Project Grid -->
+      <div class="projects-archive-grid" id="projectsGrid">
+
+        <!-- ==================== CARD 1: INNOPIX STUDIO ==================== -->
+        <article class="project-archive-card" data-category="wordpress" data-category-label="Wordpress"
+          data-title="Innopix Studio" data-tags="WordPress,Elementor Pro,ACF,Responsive,UI/UX,Branding"
+          data-desc="Complete custom WordPress development for a modern digital media and branding production studio. Built with bespoke Elementor Pro templates, Advanced Custom Fields (ACF) architecture, dynamic client showcases, and speed-optimized responsive styling."
+          data-url="https://innopixstudio.com/">
+
+          <div class="project-card-media">
+            <img src="assets/images/innopix-mockup.png" alt="Innopix Studio - Branding & Media Production Website"
+              class="project-card-img" loading="lazy">
+          </div>
+
+          <div class="project-card-body">
+            <div class="project-card-pills">
+              <span class="work-pill">WordPress</span>
+              <span class="work-pill">Elementor Pro</span>
+              <span class="work-pill">ACF</span>
+              <span class="work-pill">Responsive</span>
+            </div>
+
+            <div class="project-card-title-row">
+              <h2 class="project-card-title">Innopix Studio</h2>
+              <span class="project-card-arrow" aria-hidden="true">
+                <i class="bi bi-arrow-up-right"></i>
+              </span>
+            </div>
+
+            <div class="project-card-actions">
+              <a href="https://innopixstudio.com/" target="_blank" rel="noopener noreferrer"
+                class="btn-project-visit btn-animation" title="Visit Innopix Studio Live">
+                <span class="btn-anim-text">Visit Live Site</span>
+                <span class="btn-anim-icon btn-arrow-marquee" aria-hidden="true">
+                  <i class="bi bi-box-arrow-up-right arrow-first"></i>
+                  <i class="bi bi-box-arrow-up-right arrow-second"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ==================== CARD 2: ASHWINI DIGITAL SOLUTIONS ==================== -->
+        <article class="project-archive-card" data-category="wordpress" data-category-label="Wordpress"
+          data-title="Ashwini Digital Solutions"
+          data-tags="WordPress,Elementor,Responsive,Display Solutions,Smart Signage,UI/UX"
+          data-desc="Commercial product catalog and corporate web platform showcasing smart digital displays, LED signage solutions, and interactive quotation workflows. Engineered with tailored layouts, clean typography, and search engine optimization."
+          data-url="https://ashwinidigitalsolution.com/">
+
+          <div class="project-card-media">
+            <img src="assets/images/ashwini-mockup.png"
+              alt="Ashwini Digital Solutions - Smart Display Solutions Website" class="project-card-img" loading="lazy">
+          </div>
+
+          <div class="project-card-body">
+            <div class="project-card-pills">
+              <span class="work-pill">WordPress</span>
+              <span class="work-pill">Elementor</span>
+              <span class="work-pill">Display Tech</span>
+              <span class="work-pill">Responsive</span>
+            </div>
+
+            <div class="project-card-title-row">
+              <h2 class="project-card-title">Ashwini Digital Solutions</h2>
+              <span class="project-card-arrow" aria-hidden="true">
+                <i class="bi bi-arrow-up-right"></i>
+              </span>
+            </div>
+
+            <div class="project-card-actions">
+              <a href="https://ashwinidigitalsolution.com/" target="_blank" rel="noopener noreferrer"
+                class="btn-project-visit btn-animation" title="Visit Ashwini Digital Solutions Live">
+                <span class="btn-anim-text">Visit Live Site</span>
+                <span class="btn-anim-icon btn-arrow-marquee" aria-hidden="true">
+                  <i class="bi bi-box-arrow-up-right arrow-first"></i>
+                  <i class="bi bi-box-arrow-up-right arrow-second"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ==================== CARD 3: BELLFABS BOILERS ==================== -->
+        <article class="project-archive-card" data-category="wordpress" data-category-label="Wordpress"
+          data-title="Bellfabs Boilers" data-tags="ACF,Elementor Pro,Dynamic,Industrial,Boilers,Engineering"
+          data-desc="Engineering and manufacturing web presence for an industrial steam boiler manufacturer. Features dynamic boiler model taxonomies, technical specifications tables, and automated quotation inquiry forms."
+          data-url="https://bellfabsindia.com/">
+
+          <div class="project-card-media">
+            <img src="assets/images/bellfabs-boilers-mockup.png"
+              alt="Bellfabs Boilers - Industrial Steam Boilers Website" class="project-card-img" loading="lazy">
+          </div>
+
+          <div class="project-card-body">
+            <div class="project-card-pills">
+              <span class="work-pill">ACF</span>
+              <span class="work-pill">Elementor Pro</span>
+              <span class="work-pill">Engineering</span>
+              <span class="work-pill">Industrial</span>
+            </div>
+
+            <div class="project-card-title-row">
+              <h2 class="project-card-title">Bellfabs Boilers</h2>
+              <span class="project-card-arrow" aria-hidden="true">
+                <i class="bi bi-arrow-up-right"></i>
+              </span>
+            </div>
+
+            <div class="project-card-actions">
+              <a href="https://bellfabsindia.com/" target="_blank" rel="noopener noreferrer"
+                class="btn-project-visit btn-animation" title="Visit Bellfabs Boilers Live">
+                <span class="btn-anim-text">Visit Live Site</span>
+                <span class="btn-anim-icon btn-arrow-marquee" aria-hidden="true">
+                  <i class="bi bi-box-arrow-up-right arrow-first"></i>
+                  <i class="bi bi-box-arrow-up-right arrow-second"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ==================== CARD 4: KIDS NATION PRESCHOOL ==================== -->
+        <article class="project-archive-card" data-category="wordpress" data-category-label="Wordpress"
+          data-title="Kids Nation Preschool" data-tags="WordPress,Elementor,Education,Preschool,Admissions,Responsive"
+          data-desc="Vibrant, parent-friendly early childhood education academy website. Designed with friendly colors, structured age-group curriculum guides, photo galleries, and multi-step online admission inquiry forms."
+          data-url="https://kidsnationpreschool.com/">
+
+          <div class="project-card-media">
+            <img src="assets/images/kids-nation-mockup.png"
+              alt="Kids Nation Preschool - Early Childhood Education Website" class="project-card-img" loading="lazy">
+          </div>
+
+          <div class="project-card-body">
+            <div class="project-card-pills">
+              <span class="work-pill">WordPress</span>
+              <span class="work-pill">Elementor</span>
+              <span class="work-pill">Education</span>
+              <span class="work-pill">Responsive</span>
+            </div>
+
+            <div class="project-card-title-row">
+              <h2 class="project-card-title">Kids Nation Preschool</h2>
+              <span class="project-card-arrow" aria-hidden="true">
+                <i class="bi bi-arrow-up-right"></i>
+              </span>
+            </div>
+
+            <div class="project-card-actions">
+              <a href="https://kidsnationpreschool.com/" target="_blank" rel="noopener noreferrer"
+                class="btn-project-visit btn-animation" title="Visit Kids Nation Preschool Live">
+                <span class="btn-anim-text">Visit Live Site</span>
+                <span class="btn-anim-icon btn-arrow-marquee" aria-hidden="true">
+                  <i class="bi bi-box-arrow-up-right arrow-first"></i>
+                  <i class="bi bi-box-arrow-up-right arrow-second"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ==================== CARD 5: VINE INFO TECH ==================== -->
+        <article class="project-archive-card" data-category="wordpress" data-category-label="Wordpress"
+          data-title="Vine Info Tech" data-tags="WordPress,Corporate,IT Solutions,Consulting,Tech Services,Responsive"
+          data-desc="Corporate web platform for an information technology and consulting services firm. Built with modular service sections, enterprise software offerings, client case studies, and modern branding aesthetics."
+          data-url="https://vineinfotech.com/">
+
+          <div class="project-card-media">
+            <img src="assets/images/vineinfo-tech-mockup.png" alt="Vine Info Tech - Corporate IT Solutions Website"
+              class="project-card-img" loading="lazy">
+          </div>
+
+          <div class="project-card-body">
+            <div class="project-card-pills">
+              <span class="work-pill">WordPress</span>
+              <span class="work-pill">Corporate</span>
+              <span class="work-pill">IT Services</span>
+              <span class="work-pill">Speed Optimized</span>
+            </div>
+
+            <div class="project-card-title-row">
+              <h2 class="project-card-title">Vine Info Tech</h2>
+              <span class="project-card-arrow" aria-hidden="true">
+                <i class="bi bi-arrow-up-right"></i>
+              </span>
+            </div>
+
+            <div class="project-card-actions">
+              <a href="https://vineinfotech.com/" target="_blank" rel="noopener noreferrer"
+                class="btn-project-visit btn-animation" title="Visit Vine Info Tech Live">
+                <span class="btn-anim-text">Visit Live Site</span>
+                <span class="btn-anim-icon btn-arrow-marquee" aria-hidden="true">
+                  <i class="bi bi-box-arrow-up-right arrow-first"></i>
+                  <i class="bi bi-box-arrow-up-right arrow-second"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ==================== CARD 6: CORE ENERGY SOLUTIONS (CES) ==================== -->
+        <article class="project-archive-card" data-category="wordpress" data-category-label="Wordpress"
+          data-title="Core Energy Solutions"
+          data-tags="Core Energy Solutions,CES,WordPress,Elementor Pro,Engineering,Industrial,Energy,products,Critical Industries"
+          data-desc="Corporate web platform for Core Energy Solutions delivering engineered solutions, specialized technical equipment, and supply chain capabilities for critical industrial and energy sectors."
+          data-url="https://www.core-energys.com/">
+
+          <div class="project-card-media">
+            <img src="assets/images/ces-mockup.png"
+              alt="Core Energy Solutions (CES) - Engineered Solutions & Industrial Website" class="project-card-img"
+              loading="lazy">
+          </div>
+
+          <div class="project-card-body">
+            <div class="project-card-pills">
+              <span class="work-pill">WordPress</span>
+              <span class="work-pill">Elementor Pro</span>
+              <span class="work-pill">Engineering</span>
+              <span class="work-pill">products</span>
+            </div>
+
+            <div class="project-card-title-row">
+              <h2 class="project-card-title">Core Energy Solutions</h2>
+              <span class="project-card-arrow" aria-hidden="true">
+                <i class="bi bi-arrow-up-right"></i>
+              </span>
+            </div>
+
+            <div class="project-card-actions">
+              <a href="https://www.core-energys.com/" target="_blank" rel="noopener noreferrer"
+                class="btn-project-visit btn-animation" title="Visit Core Energy Solutions Live">
+                <span class="btn-anim-text">Visit Live Site</span>
+                <span class="btn-anim-icon btn-arrow-marquee" aria-hidden="true">
+                  <i class="bi bi-box-arrow-up-right arrow-first"></i>
+                  <i class="bi bi-box-arrow-up-right arrow-second"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ==================== CARD 7: FIRST FRAME FOURM (F3) ==================== -->
+        <article class="project-archive-card" data-category="wordpress" data-category-label="Wordpress"
+          data-title="First Frame Fourm (F3)"
+          data-tags="First Frame Fourm,First Frame Forum,F3,WordPress,Astra,Elementor Pro,Media Production,Creative Studio,Responsive,Web Design"
+          data-desc="Creative photography, cinematography, and media production academy web platform featuring dynamic portfolio showcases, masterclass workshop schedules, and student registration gateways."
+          data-url="https://www.firstframefourm.com/">
+
+          <div class="project-card-media">
+            <img src="assets/images/f3-mockup.png" alt="First Frame Fourm (F3) - Creative Media Production Website"
+              class="project-card-img" loading="lazy">
+          </div>
+
+          <div class="project-card-body">
+            <div class="project-card-pills">
+              <span class="work-pill">WordPress</span>
+              <span class="work-pill">Elementor Pro</span>
+              <span class="work-pill">business</span>
+              <span class="work-pill">Responsive</span>
+            </div>
+
+            <div class="project-card-title-row">
+              <h2 class="project-card-title">First Frame Fourm (F3)</h2>
+              <span class="project-card-arrow" aria-hidden="true">
+                <i class="bi bi-arrow-up-right"></i>
+              </span>
+            </div>
+
+            <div class="project-card-actions">
+              <a href="https://www.firstframefourm.com/" target="_blank" rel="noopener noreferrer"
+                class="btn-project-visit btn-animation" title="Visit First Frame Fourm Live">
+                <span class="btn-anim-text">Visit Live Site</span>
+                <span class="btn-anim-icon btn-arrow-marquee" aria-hidden="true">
+                  <i class="bi bi-box-arrow-up-right arrow-first"></i>
+                  <i class="bi bi-box-arrow-up-right arrow-second"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ==================== CARD 8: POPO FOODS ==================== -->
+        <article class="project-archive-card" data-category="wordpress" data-category-label="Wordpress"
+          data-title="Popo Foods"
+          data-tags="Popo Foods,WordPress,Food &amp; Beverage,Product Catalog,Responsive,E-Commerce,UI/UX,Web Design"
+          data-desc="Commercial food manufacturing and authentic Indian culinary products showcase website featuring structured category catalogs, hygienic preparation highlights, and customer inquiry funnels."
+          data-url="https://popofoods.com/">
+
+          <div class="project-card-media">
+            <img src="assets/images/popo foods-mockup.png" alt="Popo Foods - Authentic Indian Culinary Products Website"
+              class="project-card-img" loading="lazy">
+          </div>
+
+          <div class="project-card-body">
+            <div class="project-card-pills">
+              <span class="work-pill">WordPress</span>
+              <span class="work-pill">Food &amp; Beverage</span>
+              <span class="work-pill">Catalog</span>
+              <span class="work-pill">Responsive</span>
+            </div>
+
+            <div class="project-card-title-row">
+              <h2 class="project-card-title">Popo Foods</h2>
+              <span class="project-card-arrow" aria-hidden="true">
+                <i class="bi bi-arrow-up-right"></i>
+              </span>
+            </div>
+
+            <div class="project-card-actions">
+              <a href="https://popofoods.com/" target="_blank" rel="noopener noreferrer"
+                class="btn-project-visit btn-animation" title="Visit Popo Foods Live">
+                <span class="btn-anim-text">Visit Live Site</span>
+                <span class="btn-anim-icon btn-arrow-marquee" aria-hidden="true">
+                  <i class="bi bi-box-arrow-up-right arrow-first"></i>
+                  <i class="bi bi-box-arrow-up-right arrow-second"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ==================== CARD 9: BOSS ERP & ANALYTICS DASHBOARD ==================== -->
+        <article class="project-archive-card" data-category="dashboard" data-category-label="Dashboard UI &amp; ERP"
+          data-title="Boss ERP & Operations Dashboard"
+          data-tags="ERPNext v15,Frappe Framework,Python,Analytics,Operations,Dashboard UI"
+          data-desc="Comprehensive enterprise resource planning and business intelligence dashboard. Features automated stock ledger tracking, order fulfillment pipelines, financial metrics, and custom Frappe DocType extensions."
+          data-url="https://mohammedashar35.github.io/Boss-Dashboard-UI/">
+
+          <div class="project-card-media">
+            <img src="assets/images/boss-dashboard-mockup.png" alt="Boss ERP & Operations Dashboard - ERPNext"
+              class="project-card-img" loading="lazy">
+          </div>
+
+          <div class="project-card-body">
+            <div class="project-card-pills">
+              <span class="work-pill">HTML & CSS</span>
+              <span class="work-pill">Bootstrap</span>
+              <span class="work-pill">Dashboard UI</span>
+              <span class="work-pill">Responsive</span>
+            </div>
+
+            <div class="project-card-title-row">
+              <h2 class="project-card-title">Boss Dashboard UI</h2>
+              <span class="project-card-arrow" aria-hidden="true">
+                <i class="bi bi-arrow-up-right"></i>
+              </span>
+            </div>
+
+            <div class="project-card-actions">
+              <a href="https://mohammedashar35.github.io/Boss-Dashboard-UI/" target="_blank" rel="noopener noreferrer"
+                class="btn-project-visit btn-animation" title="Explore Boss Dashboard UI Live">
+                <span class="btn-anim-text">View Dashboard UI</span>
+                <span class="btn-anim-icon btn-arrow-marquee" aria-hidden="true">
+                  <i class="bi bi-box-arrow-up-right arrow-first"></i>
+                  <i class="bi bi-box-arrow-up-right arrow-second"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ==================== CARD 10: BNA - BUSINESS NETWORK APP LANDING PAGE ==================== -->
+        <article class="project-archive-card" data-category="landingpage" data-category-label="Landing Page"
+          data-title="BNA - Business Network App Landing Page"
+          data-tags="BNA,Landing Page,Business Network App,Web Design,Responsive,HTML,CSS,Bootstrap,SaaS,UI/UX"
+          data-desc="High-converting product landing page for Business Network App (BNA). Features live referral tracking showcases, member directory highlights, integrated meeting QR check-in flows, and booking demo workflows."
+          data-url="https://ui.innoblitz.in/businessnetworkapp/">
+
+          <div class="project-card-media">
+            <img src="assets/images/BNA-landing page.png" alt="BNA - Business Network App Landing Page"
+              class="project-card-img" loading="lazy">
+          </div>
+
+          <div class="project-card-body">
+            <div class="project-card-pills">
+              <span class="work-pill">Wordpress</span>
+              <span class="work-pill">Landing Page</span>
+              <span class="work-pill">UI/UX</span>
+              <span class="work-pill">Responsive</span>
+            </div>
+
+            <div class="project-card-title-row">
+              <h2 class="project-card-title">BNA Landing Page</h2>
+              <span class="project-card-arrow" aria-hidden="true">
+                <i class="bi bi-arrow-up-right"></i>
+              </span>
+            </div>
+
+            <div class="project-card-actions">
+              <a href="https://ui.innoblitz.in/businessnetworkapp/" target="_blank" rel="noopener noreferrer"
+                class="btn-project-visit btn-animation" title="Visit BNA Landing Page Live">
+                <span class="btn-anim-text">Visit Live Site</span>
+                <span class="btn-anim-icon btn-arrow-marquee" aria-hidden="true">
+                  <i class="bi bi-box-arrow-up-right arrow-first"></i>
+                  <i class="bi bi-box-arrow-up-right arrow-second"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ==================== CARD 11: BSS - BEST SECURITY SERVICES LANDING PAGE ==================== -->
+        <article class="project-archive-card" data-category="landingpage" data-category-label="Landing Page"
+          data-title="BSS - Best Security Services Landing Page"
+          data-tags="BSS,Best Security Services,Landing Page,Security Services,WordPress,Astra,Elementor,UI/UX,Responsive"
+          data-desc="High-converting marketing landing page for Best Security Services (BSS), featuring professional manned guarding, residential &amp; corporate security showcases, and instant quotation inquiry funnels."
+          data-url="https://bestsecurity.co/lp/securityservices/">
+
+          <div class="project-card-media">
+            <img src="assets/images/BSS landing page.png" alt="BSS - Best Security Services Landing Page"
+              class="project-card-img" loading="lazy">
+          </div>
+
+          <div class="project-card-body">
+            <div class="project-card-pills">
+              <span class="work-pill">Wordpress</span>
+              <span class="work-pill">Landing Page</span>
+              <span class="work-pill">Security</span>
+              <span class="work-pill">Responsive</span>
+            </div>
+
+            <div class="project-card-title-row">
+              <h2 class="project-card-title">BSS Landing Page</h2>
+              <span class="project-card-arrow" aria-hidden="true">
+                <i class="bi bi-arrow-up-right"></i>
+              </span>
+            </div>
+
+            <div class="project-card-actions">
+              <a href="https://bestsecurity.co/lp/securityservices/" target="_blank" rel="noopener noreferrer"
+                class="btn-project-visit btn-animation" title="Visit BSS Landing Page Live">
+                <span class="btn-anim-text">Visit Live Site</span>
+                <span class="btn-anim-icon btn-arrow-marquee" aria-hidden="true">
+                  <i class="bi bi-box-arrow-up-right arrow-first"></i>
+                  <i class="bi bi-box-arrow-up-right arrow-second"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ==================== CARD 12: SMART SHELF MONITORING SYSTEM ==================== -->
+        <article class="project-archive-card" data-category="aiml-iot" data-category-label="AI/ML &amp; IOT"
+          data-title="Smart Shelf Monitoring System"
+          data-tags="Python,YOLOv8,OpenCV,Streamlit,Computer Vision,Machine Learning,Deep Learning,AI/ML,Smart Shelf Monitoring"
+          data-desc="AI-powered shelf detection system to monitor product availability in real-time. Built with YOLOv8, OpenCV, and Streamlit."
+          data-url="assets/docs/PROJECT%20REPORT.pdf">
+
+          <div class="project-card-media">
+            <img src="assets/images/Smart Shelf Monitoring System-mockup.png"
+              alt="Smart Shelf Monitoring System - Real-Time YOLOv8 AI Detection" class="project-card-img"
+              loading="lazy">
+          </div>
+
+          <div class="project-card-body">
+            <div class="project-card-pills">
+              <span class="work-pill">AI/ML</span>
+              <span class="work-pill">YOLOv8</span>
+              <span class="work-pill">Python</span>
+              <span class="work-pill">Streamlit</span>
+            </div>
+
+            <div class="project-card-title-row">
+              <h2 class="project-card-title">Smart Shelf Monitoring</h2>
+              <span class="project-card-arrow" aria-hidden="true">
+                <i class="bi bi-arrow-up-right"></i>
+              </span>
+            </div>
+
+            <div class="project-card-actions">
+              <a href="assets/docs/PROJECT%20REPORT.pdf" target="_blank" rel="noopener noreferrer"
+                class="btn-project-visit btn-animation" title="View Smart Shelf Monitoring Project Report">
+                <span class="btn-anim-text">View Docx</span>
+                <span class="btn-anim-icon btn-arrow-marquee" aria-hidden="true">
+                  <i class="bi bi-box-arrow-up-right arrow-first"></i>
+                  <i class="bi bi-box-arrow-up-right arrow-second"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ==================== CARD 13: MOBILE PRICE PREDICTION ==================== -->
+        <article class="project-archive-card" data-category="aiml-iot" data-category-label="AI/ML &amp; IOT"
+          data-title="Mobile Price Prediction Model"
+          data-tags="Python,Machine Learning,Streamlit,Scikit-Learn,Data Science,AI/ML,Predictive Modeling,Algorithms,Mobile Price Prediction"
+          data-desc="Interactive machine learning web application predicting mobile phone price valuations based on specifications like RAM, storage, battery, camera, and processor."
+          data-url="https://mobilepriceprediction-lrrwrjddoffhfcyppkz9zc.streamlit.app/">
+
+          <div class="project-card-media">
+            <img src="assets/images/mobile-price-prediction.png"
+              alt="Mobile Price Prediction Model - Machine Learning Streamlit App" class="project-card-img"
+              loading="lazy">
+          </div>
+
+          <div class="project-card-body">
+            <div class="project-card-pills">
+              <span class="work-pill">AI/ML</span>
+              <span class="work-pill">Python</span>
+              <span class="work-pill">Scikit-Learn</span>
+              <span class="work-pill">Streamlit</span>
+            </div>
+
+            <div class="project-card-title-row">
+              <h2 class="project-card-title">Mobile Price Prediction</h2>
+              <span class="project-card-arrow" aria-hidden="true">
+                <i class="bi bi-arrow-up-right"></i>
+              </span>
+            </div>
+
+            <div class="project-card-actions">
+              <a href="https://mobilepriceprediction-lrrwrjddoffhfcyppkz9zc.streamlit.app/" target="_blank"
+                rel="noopener noreferrer" class="btn-project-visit btn-animation"
+                title="Try Mobile Price Prediction Model Live">
+                <span class="btn-anim-text">Visit Live App</span>
+                <span class="btn-anim-icon btn-arrow-marquee" aria-hidden="true">
+                  <i class="bi bi-box-arrow-up-right arrow-first"></i>
+                  <i class="bi bi-box-arrow-up-right arrow-second"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ==================== CARD 14: IOT SMART ENVIRONMENTAL SYSTEM ==================== -->
+        <article class="project-archive-card" data-category="aiml-iot" data-category-label="AI/ML &amp; IOT"
+          data-title="Smart Environmental Monitoring & IoT Prototype"
+          data-tags="MicroPython,Raspberry Pi Pico,Arduino,Wokwi,IoT,Sensors,Embedded Systems,IOT,Hardware"
+          data-desc="Embedded microcomputing prototype integrating ultrasonic distance sensors, environmental temperature/humidity telemetry, and cloud serial logging using Raspberry Pi Pico and MicroPython."
+          data-url="https://github.com/mohammedashar35">
+
+          <div class="project-card-media">
+            <img src="assets/images/IOT-mockup.png"
+              alt="Smart Environmental Monitoring & IoT Telemetry System - Raspberry Pi Pico" class="project-card-img"
+              loading="lazy">
+          </div>
+
+          <div class="project-card-body">
+            <div class="project-card-pills">
+              <span class="work-pill">IOT</span>
+              <span class="work-pill">MicroPython</span>
+              <span class="work-pill">Raspberry Pi Pico</span>
+              <span class="work-pill">Sensors</span>
+            </div>
+
+            <div class="project-card-title-row">
+              <h2 class="project-card-title">IoT Telemetry System</h2>
+              <span class="project-card-arrow" aria-hidden="true">
+                <i class="bi bi-arrow-up-right"></i>
+              </span>
+            </div>
+
+            <div class="project-card-actions">
+              <a href="https://github.com/mohammedashar35" target="_blank" rel="noopener noreferrer"
+                class="btn-project-visit btn-animation" title="Explore Mohammed Ashar on GitHub">
+                <span class="btn-anim-text">View on GitHub</span>
+                <span class="btn-anim-icon btn-arrow-marquee" aria-hidden="true">
+                  <i class="bi bi-box-arrow-up-right arrow-first"></i>
+                  <i class="bi bi-box-arrow-up-right arrow-second"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ======================================================================
+       5. FOOTER SECTION (Exact Match to Home Page site-footer-modern)
+       Featuring: "Let's work together" with blue accent circle behind 'Le',
+       "Based in India" & Social Icons, Two Action Cards (Email & Phone),
+       Giant Typography "MOHAMMED ASHAR", and Back to Top
+       ====================================================================== -->
+  <footer class="site-footer-modern" id="footer">
+    <div class="custom-container">
+
+      <!-- Top Row: Heading/Location & Dual Action Cards -->
+      <div class="row gy-5 align-items-center mb-4">
+
+        <!-- Left Column: "Let's work together" & Based in India + Socials -->
+        <div class="col-12 col-lg-5 col-xl-4">
+          <div class="footer-cta-block">
+            <h2 class="footer-hero-title">
+              <span class="accent-letter-wrap">
+                <span class="accent-circle-bg"></span>Le
+              </span>t's work<br>
+              together
+            </h2>
+
+            <div class="footer-meta-bar">
+              <span class="footer-location-text">Based in India</span>
+              <span class="footer-meta-divider">|</span>
+              <div class="footer-social-links">
+                <!-- WhatsApp -->
+                <a href="https://wa.me/919092317008?text=Hello%20Ashar,%20let's%20work%20together!" target="_blank"
+                  rel="noopener" class="footer-social-link" title="WhatsApp">
+                  <i class="bi bi-whatsapp"></i>
+                </a>
+                <!-- GitHub -->
+                <a href="https://github.com/mohammedashar35" target="_blank" rel="noopener" class="footer-social-link"
+                  title="GitHub">
+                  <i class="bi bi-github"></i>
+                </a>
+                <!-- LinkedIn -->
+                <a href="https://linkedin.com/in/mohammed-ashar2003" target="_blank" rel="noopener"
+                  class="footer-social-link" title="LinkedIn">
+                  <i class="bi bi-linkedin"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Two High-End Action Cards -->
+        <div class="col-12 col-lg-7 col-xl-8">
+          <div class="row g-4">
+
+            <!-- Card 1: Email / Skilled Developer -->
+            <div class="col-12 col-md-6">
+              <div class="footer-action-card">
+                <div class="footer-card-prompt">Looking for a skilled developer?</div>
+                <a href="mailto:mohammedasharan35@gmail.com" class="footer-card-link" title="Email Mohammed Ashar">
+                  <span class="footer-card-link-text">mohammedasharan35@gmail.com</span>
+                  <span class="footer-arrow-marquee" aria-hidden="true">
+                    <i class="bi bi-arrow-up-right arrow-first"></i>
+                    <i class="bi bi-arrow-up-right arrow-second"></i>
+                  </span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Card 2: Phone / Discuss Projects -->
+            <div class="col-12 col-md-6">
+              <div class="footer-action-card">
+                <div class="footer-card-prompt">Want a more in-depth look at my work?</div>
+                <a href="tel:+919092317008" class="footer-card-link" title="Call Mohammed Ashar">
+                  <span class="footer-card-link-text">+91 90923 17008</span>
+                  <span class="footer-arrow-marquee" aria-hidden="true">
+                    <i class="bi bi-arrow-up-right arrow-first"></i>
+                    <i class="bi bi-arrow-up-right arrow-second"></i>
+                  </span>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Giant Typography Name: MOHAMMED ASHAR -->
+      <div class="footer-giant-name-wrap" aria-hidden="true">
+        <div class="footer-giant-name">MOHAMMED ASHAR</div>
+      </div>
+
+      <!-- Bottom Bar: Copyright & Back to Top -->
+      <div class="footer-bottom-bar">
+        <div class="footer-copyright">
+          © 2026 Mohammed Ashar S, All Rights Reserved
+        </div>
+        <a href="#projectsHero" class="footer-back-to-top" id="footerBackToTop" title="Scroll to top of page">
+          <span>Back to Top</span>
+          <i class="bi bi-arrow-up"></i>
+        </a>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- ======================================================================
+       SCRIPTS: Bootstrap 5, GSAP, Custom main.js
+       ====================================================================== -->
+  <!-- Bootstrap 5 Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- GSAP 3.12.5 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.37"></script>
+  <script>
+    // Initialize Lenis for smooth scrolling
+    const lenis = new Lenis({
+      duration: 1.2, // Smooth scrolling speed
+      easing: (t) => 1 - Math.pow(1 - t, 4), // Smooth easing
+      direction: 'vertical',
+      smooth: true,
+      smoothTouch: false, // Disable smooth scrolling on touch devices to avoid flickering
+      touchMultiplier: 1.5,
+    });
+    window.lenis = lenis;
+
+    // Animation frame to ensure smooth updates
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    // Sync with GSAP ScrollTrigger if present
+    if (typeof ScrollTrigger !== 'undefined') {
+      lenis.on('scroll', ScrollTrigger.update);
+    }
+
+    // Ensure no conflict with default scroll behavior
+    document.documentElement.style.scrollBehavior = "auto"; // Prevents CSS conflicts
+  </script>
+
+  <!-- Custom Interaction Script -->
+  <script src="js/main.js"></script>
+</body>
+
+</html>
