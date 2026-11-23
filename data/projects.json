@@ -1,0 +1,254 @@
+[
+  {
+    "id": "proj_1",
+    "title": "Innopix Studio",
+    "category": "wordpress",
+    "categoryLabel": "Wordpress",
+    "tags": "WordPress,Elementor Pro,ACF,Responsive,UI/UX,Branding",
+    "pills": [
+      "WordPress",
+      "Elementor Pro",
+      "ACF",
+      "Responsive"
+    ],
+    "description": "Complete custom WordPress development for a modern digital media and branding production studio. Built with bespoke Elementor Pro templates, Advanced Custom Fields (ACF) architecture, dynamic client showcases, and speed-optimized responsive styling.",
+    "url": "https://innopixstudio.com/",
+    "image": "assets/images/innopix-mockup.png",
+    "imageAlt": "Innopix Studio - Branding & Media Production Website",
+    "featured": true
+  },
+  {
+    "id": "proj_2",
+    "title": "Ashwini Digital Solutions",
+    "category": "wordpress",
+    "categoryLabel": "Wordpress",
+    "tags": "WordPress,Elementor,Responsive,Display Solutions,Smart Signage,UI/UX",
+    "pills": [
+      "WordPress",
+      "Elementor",
+      "Display Tech",
+      "Responsive"
+    ],
+    "description": "Commercial product catalog and corporate web platform showcasing smart digital displays, LED signage solutions, and interactive quotation workflows. Engineered with tailored layouts, clean typography, and search engine optimization.",
+    "url": "https://ashwinidigitalsolution.com/",
+    "image": "assets/images/ashwini-mockup.png",
+    "imageAlt": "Ashwini Digital Solutions - Smart Display Solutions Website",
+    "featured": true
+  },
+  {
+    "id": "proj_3",
+    "title": "Bellfabs Boilers",
+    "category": "wordpress",
+    "categoryLabel": "Wordpress",
+    "tags": "ACF,Elementor Pro,Dynamic,Industrial,Boilers,Engineering",
+    "pills": [
+      "ACF",
+      "Elementor Pro",
+      "Engineering",
+      "Industrial"
+    ],
+    "description": "Engineering and manufacturing web presence for an industrial steam boiler manufacturer. Features dynamic boiler model taxonomies, technical specifications tables, and automated quotation inquiry forms.",
+    "url": "https://bellfabsindia.com/",
+    "image": "assets/images/bellfabs-boilers-mockup.png",
+    "imageAlt": "Bellfabs Boilers - Industrial Steam Boilers Website",
+    "featured": true
+  },
+  {
+    "id": "proj_4",
+    "title": "Kids Nation Preschool",
+    "category": "wordpress",
+    "categoryLabel": "Wordpress",
+    "tags": "WordPress,Elementor,Education,Preschool,Admissions,Responsive",
+    "pills": [
+      "WordPress",
+      "Elementor",
+      "Education",
+      "Responsive"
+    ],
+    "description": "Vibrant, parent-friendly early childhood education academy website. Designed with friendly colors, structured age-group curriculum guides, photo galleries, and multi-step online admission inquiry forms.",
+    "url": "https://kidsnationpreschool.com/",
+    "image": "assets/images/kids-nation-mockup.png",
+    "imageAlt": "Kids Nation Preschool - Early Childhood Education Website",
+    "featured": true
+  },
+  {
+    "id": "proj_5",
+    "title": "Vine Info Tech",
+    "category": "wordpress",
+    "categoryLabel": "Wordpress",
+    "tags": "WordPress,Corporate,IT Solutions,Consulting,Tech Services,Responsive",
+    "pills": [
+      "WordPress",
+      "Corporate",
+      "IT Services",
+      "Speed Optimized"
+    ],
+    "description": "Corporate web platform for an information technology and consulting services firm. Built with modular service sections, enterprise software offerings, client case studies, and modern branding aesthetics.",
+    "url": "https://vineinfotech.com/",
+    "image": "assets/images/vineinfo-tech-mockup.png",
+    "imageAlt": "Vine Info Tech - Corporate IT Solutions Website",
+    "featured": false
+  },
+  {
+    "id": "proj_6",
+    "title": "Core Energy Solutions",
+    "category": "wordpress",
+    "categoryLabel": "Wordpress",
+    "tags": "Core Energy Solutions,CES,WordPress,Elementor Pro,Engineering,Industrial,Energy,products,Critical Industries",
+    "pills": [
+      "WordPress",
+      "Elementor Pro",
+      "Engineering",
+      "products"
+    ],
+    "description": "Corporate web platform for Core Energy Solutions delivering engineered solutions, specialized technical equipment, and supply chain capabilities for critical industrial and energy sectors.",
+    "url": "https://www.core-energys.com/",
+    "image": "assets/images/ces-mockup.png",
+    "imageAlt": "Core Energy Solutions (CES) - Engineered Solutions & Industrial Website",
+    "featured": false
+  },
+  {
+    "id": "proj_7",
+    "title": "First Frame Fourm (F3)",
+    "category": "wordpress",
+    "categoryLabel": "Wordpress",
+    "tags": "First Frame Fourm,First Frame Forum,F3,WordPress,Astra,Elementor Pro,Media Production,Creative Studio,Responsive,Web Design",
+    "pills": [
+      "WordPress",
+      "Elementor Pro",
+      "business",
+      "Responsive"
+    ],
+    "description": "Creative photography, cinematography, and media production academy web platform featuring dynamic portfolio showcases, masterclass workshop schedules, and student registration gateways.",
+    "url": "https://www.firstframefourm.com/",
+    "image": "assets/images/f3-mockup.png",
+    "imageAlt": "First Frame Fourm (F3) - Creative Media Production Website",
+    "featured": false
+  },
+  {
+    "id": "proj_8",
+    "title": "Popo Foods",
+    "category": "wordpress",
+    "categoryLabel": "Wordpress",
+    "tags": "Popo Foods,WordPress,Food &amp; Beverage,Product Catalog,Responsive,E-Commerce,UI/UX,Web Design",
+    "pills": [
+      "WordPress",
+      "Food &amp; Beverage",
+      "Catalog",
+      "Responsive"
+    ],
+    "description": "Commercial food manufacturing and authentic Indian culinary products showcase website featuring structured category catalogs, hygienic preparation highlights, and customer inquiry funnels.",
+    "url": "https://popofoods.com/",
+    "image": "assets/images/popo foods-mockup.png",
+    "imageAlt": "Popo Foods - Authentic Indian Culinary Products Website",
+    "featured": false
+  },
+  {
+    "id": "proj_9",
+    "title": "Boss ERP & Operations Dashboard",
+    "category": "dashboard",
+    "categoryLabel": "Dashboard UI &amp; ERP",
+    "tags": "ERPNext v15,Frappe Framework,Python,Analytics,Operations,Dashboard UI",
+    "pills": [
+      "HTML & CSS",
+      "Bootstrap",
+      "Dashboard UI",
+      "Responsive"
+    ],
+    "description": "Comprehensive enterprise resource planning and business intelligence dashboard. Features automated stock ledger tracking, order fulfillment pipelines, financial metrics, and custom Frappe DocType extensions.",
+    "url": "https://mohammedashar35.github.io/Boss-Dashboard-UI/",
+    "image": "assets/images/boss-dashboard-mockup.png",
+    "imageAlt": "Boss ERP & Operations Dashboard - ERPNext",
+    "featured": false
+  },
+  {
+    "id": "proj_10",
+    "title": "BNA - Business Network App Landing Page",
+    "category": "landingpage",
+    "categoryLabel": "Landing Page",
+    "tags": "BNA,Landing Page,Business Network App,Web Design,Responsive,HTML,CSS,Bootstrap,SaaS,UI/UX",
+    "pills": [
+      "Wordpress",
+      "Landing Page",
+      "UI/UX",
+      "Responsive"
+    ],
+    "description": "High-converting product landing page for Business Network App (BNA). Features live referral tracking showcases, member directory highlights, integrated meeting QR check-in flows, and booking demo workflows.",
+    "url": "https://ui.innoblitz.in/businessnetworkapp/",
+    "image": "assets/images/BNA-landing page.png",
+    "imageAlt": "BNA - Business Network App Landing Page",
+    "featured": false
+  },
+  {
+    "id": "proj_11",
+    "title": "BSS - Best Security Services Landing Page",
+    "category": "landingpage",
+    "categoryLabel": "Landing Page",
+    "tags": "BSS,Best Security Services,Landing Page,Security Services,WordPress,Astra,Elementor,UI/UX,Responsive",
+    "pills": [
+      "Wordpress",
+      "Landing Page",
+      "Security",
+      "Responsive"
+    ],
+    "description": "High-converting marketing landing page for Best Security Services (BSS), featuring professional manned guarding, residential &amp; corporate security showcases, and instant quotation inquiry funnels.",
+    "url": "https://bestsecurity.co/lp/securityservices/",
+    "image": "assets/images/BSS landing page.png",
+    "imageAlt": "BSS - Best Security Services Landing Page",
+    "featured": false
+  },
+  {
+    "id": "proj_12",
+    "title": "Smart Shelf Monitoring System",
+    "category": "aiml-iot",
+    "categoryLabel": "AI/ML &amp; IOT",
+    "tags": "Python,YOLOv8,OpenCV,Streamlit,Computer Vision,Machine Learning,Deep Learning,AI/ML,Smart Shelf Monitoring",
+    "pills": [
+      "AI/ML",
+      "YOLOv8",
+      "Python",
+      "Streamlit"
+    ],
+    "description": "AI-powered shelf detection system to monitor product availability in real-time. Built with YOLOv8, OpenCV, and Streamlit.",
+    "url": "assets/docs/PROJECT%20REPORT.pdf",
+    "image": "assets/images/Smart Shelf Monitoring System-mockup.png",
+    "imageAlt": "Smart Shelf Monitoring System - Real-Time YOLOv8 AI Detection",
+    "featured": false
+  },
+  {
+    "id": "proj_13",
+    "title": "Mobile Price Prediction Model",
+    "category": "aiml-iot",
+    "categoryLabel": "AI/ML &amp; IOT",
+    "tags": "Python,Machine Learning,Streamlit,Scikit-Learn,Data Science,AI/ML,Predictive Modeling,Algorithms,Mobile Price Prediction",
+    "pills": [
+      "AI/ML",
+      "Python",
+      "Scikit-Learn",
+      "Streamlit"
+    ],
+    "description": "Interactive machine learning web application predicting mobile phone price valuations based on specifications like RAM, storage, battery, camera, and processor.",
+    "url": "https://mobilepriceprediction-lrrwrjddoffhfcyppkz9zc.streamlit.app/",
+    "image": "assets/images/mobile-price-prediction.png",
+    "imageAlt": "Mobile Price Prediction Model - Machine Learning Streamlit App",
+    "featured": false
+  },
+  {
+    "id": "proj_14",
+    "title": "Smart Environmental Monitoring & IoT Prototype",
+    "category": "aiml-iot",
+    "categoryLabel": "AI/ML &amp; IOT",
+    "tags": "MicroPython,Raspberry Pi Pico,Arduino,Wokwi,IoT,Sensors,Embedded Systems,IOT,Hardware",
+    "pills": [
+      "IOT",
+      "MicroPython",
+      "Raspberry Pi Pico",
+      "Sensors"
+    ],
+    "description": "Embedded microcomputing prototype integrating ultrasonic distance sensors, environmental temperature/humidity telemetry, and cloud serial logging using Raspberry Pi Pico and MicroPython.",
+    "url": "https://github.com/mohammedashar35",
+    "image": "assets/images/IOT-mockup.png",
+    "imageAlt": "Smart Environmental Monitoring & IoT Telemetry System - Raspberry Pi Pico",
+    "featured": false
+  }
+]

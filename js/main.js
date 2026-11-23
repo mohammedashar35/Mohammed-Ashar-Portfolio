@@ -510,7 +510,7 @@
   // -------------------------------------------------------------------------
   // 8. Projects Archive Filter, Search, and Quick-View Modal Controller
   // -------------------------------------------------------------------------
-  const projectCards = document.querySelectorAll('.project-archive-card');
+  const projectsGridEl = document.getElementById('projectsGrid');
   const projectFilterBtns = document.querySelectorAll('.project-tab-pill, .project-filter-btn');
   const projectSearchInput = document.getElementById('projectSearchInput');
   const projectSearchClear = document.getElementById('projectSearchClear');
@@ -518,14 +518,15 @@
   const emptyStateBox = document.getElementById('projectsEmptyState');
   const btnResetFilter = document.getElementById('btnResetFilter');
 
-  if (projectCards.length > 0) {
+  if (projectsGridEl || document.querySelectorAll('.project-archive-card').length > 0) {
     let currentCategory = 'all';
     let searchQuery = '';
 
     function filterProjects() {
       let visibleCount = 0;
+      const currentCards = document.querySelectorAll('.project-archive-card');
 
-      projectCards.forEach(card => {
+      currentCards.forEach(card => {
         const cardCategory = card.getAttribute('data-category') || '';
         const cardTitle = (card.getAttribute('data-title') || '').toLowerCase();
         const cardTags = (card.getAttribute('data-tags') || '').toLowerCase();
@@ -558,6 +559,9 @@
         }
       }
     }
+
+    // Expose globally for projects.js
+    window.filterProjects = filterProjects;
 
     // Category button click
     projectFilterBtns.forEach(btn => {

@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | Mohammed Ashar Portfolio</title>
+
+  <!-- Favicon Logo -->
+  <link rel="icon" type="image/png" href="assets/images/Ashar_logo.png">
+
+  <!-- Google Fonts: Plus Jakarta Sans & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Bootstrap 5.3.3 CSS & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Main & Admin CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+
+<body class="admin-body">
+
+  <!-- =========================================================================
+       1. LOGIN SECTION (Credentials: mohammedasharan35 / Asharan35)
+       ========================================================================= -->
+  <section class="admin-login-wrapper" id="loginWrapper">
+    <div class="admin-login-card">
+      <div class="login-brand-header">
+        <a href="index.html" title="Back to Portfolio">
+          <img src="assets/images/Ashar_logo.png" alt="Mohammed Ashar Logo" class="login-logo-img">
+        </a>
+        <h1 class="login-title">Admin Access</h1>
+        <p class="login-subtitle">Sign in to manage portfolio projects</p>
+      </div>
+
+      <div class="login-error-alert" id="loginErrorAlert" role="alert">
+        <i class="bi bi-exclamation-triangle-fill"></i>
+        <span id="loginErrorMsg">Invalid username or password.</span>
+      </div>
+
+      <form id="adminLoginForm" autocomplete="off">
+        <div class="admin-form-group">
+          <label for="adminUsername" class="admin-form-label">Username</label>
+          <div class="admin-input-wrap">
+            <i class="bi bi-person admin-input-icon"></i>
+            <input type="text" class="admin-input" id="adminUsername" placeholder="Enter admin username" required
+              autofocus>
+          </div>
+        </div>
+
+        <div class="admin-form-group">
+          <label for="adminPassword" class="admin-form-label">Password</label>
+          <div class="admin-input-wrap">
+            <i class="bi bi-lock admin-input-icon"></i>
+            <input type="password" class="admin-input" id="adminPassword" placeholder="Enter password" required>
+            <button type="button" class="admin-input-password-toggle" id="togglePasswordVisibility"
+              title="Toggle password view" aria-label="Toggle password view">
+              <i class="bi bi-eye" id="passwordEyeIcon"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="d-flex align-items-center justify-content-between mb-4">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="rememberMeCheckbox" checked>
+            <label class="form-check-label text-muted small" for="rememberMeCheckbox">
+              Remember login
+            </label>
+          </div>
+          <a href="index.html" class="small text-decoration-none text-muted hover-accent">Back to Website</a>
+        </div>
+
+        <button type="submit" class="btn-admin-primary">
+          <span>Sign In to Dashboard</span>
+          <i class="bi bi-arrow-right"></i>
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       2. ADMIN DASHBOARD WRAPPER (Shown after authentication)
+       ========================================================================= -->
+  <div class="admin-dashboard-wrapper" id="dashboardWrapper">
+
+    <!-- Navbar -->
+    <header class="admin-navbar">
+      <div class="custom-container">
+        <div class="admin-nav-inner">
+          <div class="d-flex align-items-center gap-2">
+            <a href="index.html" class="admin-nav-brand">
+              <img src="assets/images/Ashar_logo.png" alt="Ashar Logo">
+              <span class="admin-nav-brand-text">Mohammed Ashar</span>
+            </a>
+            <span class="admin-badge-portal">Admin Hub</span>
+          </div>
+
+          <div class="admin-nav-actions">
+            <div class="admin-user-pill">
+              <span class="admin-status-dot"></span>
+              <span>mohammedasharan35</span>
+            </div>
+            <a href="index.html" class="btn-admin-outline" target="_blank" title="Preview Live Portfolio">
+              <i class="bi bi-box-arrow-up-right"></i>
+              <span class="d-none d-sm-inline">Live Site</span>
+            </a>
+            <a href="projects.html" class="btn-admin-outline" target="_blank" title="Preview All Projects Page">
+              <i class="bi bi-grid"></i>
+              <span class="d-none d-sm-inline">Projects Page</span>
+            </a>
+            <button type="button" class="btn-admin-outline btn-admin-logout" id="logoutBtn" title="Sign Out">
+              <i class="bi bi-box-arrow-right"></i>
+              <span class="d-none d-sm-inline">Logout</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="custom-container pt-3">
+
+      <!-- Metrics Row -->
+      <div class="admin-stats-row">
+        <div class="admin-stat-card">
+          <div class="admin-stat-info">
+            <span class="admin-stat-label">Total Projects</span>
+            <span class="admin-stat-value" id="statTotalProjects">0</span>
+          </div>
+          <div class="admin-stat-icon blue">
+            <i class="bi bi-folder-fill"></i>
+          </div>
+        </div>
+
+        <div class="admin-stat-card">
+          <div class="admin-stat-info">
+            <span class="admin-stat-label">Featured on Home</span>
+            <span class="admin-stat-value" id="statFeaturedProjects">0</span>
+          </div>
+          <div class="admin-stat-icon amber">
+            <i class="bi bi-star-fill"></i>
+          </div>
+        </div>
+
+        <div class="admin-stat-card">
+          <div class="admin-stat-info">
+            <span class="admin-stat-label">Categories</span>
+            <span class="admin-stat-value" id="statCategoriesCount">0</span>
+          </div>
+          <div class="admin-stat-icon purple">
+            <i class="bi bi-tags-fill"></i>
+          </div>
+        </div>
+
+        <div class="admin-stat-card">
+          <div class="admin-stat-info">
+            <span class="admin-stat-label">GitHub Sync</span>
+            <span class="admin-stat-value fs-5" id="statGithubStatus">Ready</span>
+          </div>
+          <div class="admin-stat-icon emerald">
+            <i class="bi bi-github"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Action Toolbar -->
+      <div class="admin-toolbar-card">
+        <div class="admin-toolbar-left">
+          <button type="button" class="btn-admin-primary" id="openAddProjectModalBtn">
+            <i class="bi bi-plus-lg"></i>
+            <span>Add New Project</span>
+          </button>
+
+          <div class="position-relative">
+            <i class="bi bi-search position-absolute top-50 start-0 translate-middle-y ms-3 text-secondary"></i>
+            <input type="text" class="admin-search-input" id="adminTableSearch" placeholder="Search projects...">
+          </div>
+
+          <select class="admin-input py-2" id="adminCategoryFilter" style="width: auto; max-width: 170px;">
+            <option value="all">All Categories</option>
+            <option value="wordpress">Wordpress</option>
+            <option value="dashboard">Dashboard UI</option>
+            <option value="landingpage">Landing Page</option>
+            <option value="aiml-iot">AI/ML &amp; IOT</option>
+          </select>
+        </div>
+
+        <div class="admin-toolbar-right">
+          <button type="button" class="btn-admin-outline" id="openGithubSyncModalBtn" title="Sync changes to GitHub repository">
+            <i class="bi bi-cloud-arrow-up text-primary"></i>
+            <span>GitHub Sync</span>
+          </button>
+          <button type="button" class="btn-admin-outline" id="exportJsonBtn" title="Download projects.json backup">
+            <i class="bi bi-download"></i>
+            <span>Export JSON</span>
+          </button>
+          <button type="button" class="btn-admin-outline" id="resetDefaultsBtn" title="Reset to original 14 portfolio projects">
+            <i class="bi bi-arrow-counterclockwise"></i>
+            <span>Reset Defaults</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Projects Management Table -->
+      <div class="admin-table-container">
+        <div class="admin-table-header">
+          <h2 class="admin-table-title">Manage Projects</h2>
+          <span class="text-muted small" id="tableCountText">Showing 0 projects</span>
+        </div>
+
+        <div class="table-responsive">
+          <table class="admin-projects-table">
+            <thead>
+              <tr>
+                <th style="width: 70px;">Image</th>
+                <th>Title &amp; Link</th>
+                <th>Category</th>
+                <th>Tags / Tech</th>
+                <th class="text-center" style="width: 90px;" title="Shows on Homepage under 'My recent work'">Featured</th>
+                <th class="text-end" style="width: 120px;">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="adminProjectsTableBody">
+              <!-- Dynamically populated rows -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- =========================================================================
+       3. ADD / EDIT PROJECT MODAL
+       ========================================================================= -->
+  <div class="admin-modal-backdrop" id="projectModalBackdrop">
+    <div class="admin-modal-card">
+      <div class="admin-modal-header">
+        <h3 class="admin-modal-title" id="projectModalTitle">Add New Project</h3>
+        <button type="button" class="admin-modal-close" id="closeProjectModalBtn">
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
+
+      <form id="projectForm">
+        <div class="admin-modal-body">
+          <input type="hidden" id="formProjectId" value="">
+
+          <!-- Project Title -->
+          <div class="admin-form-group">
+            <label for="formProjectTitle" class="admin-form-label">Project Title <span class="text-danger">*</span></label>
+            <input type="text" class="admin-input ps-3" id="formProjectTitle" placeholder="e.g. AI Medical Assistant" required>
+          </div>
+
+          <!-- Category Selection -->
+          <div class="row">
+            <div class="col-md-6 admin-form-group">
+              <label for="formProjectCategory" class="admin-form-label">Category <span class="text-danger">*</span></label>
+              <select class="admin-input ps-3" id="formProjectCategory" required>
+                <option value="wordpress">Wordpress</option>
+                <option value="dashboard">Dashboard UI</option>
+                <option value="landingpage">Landing Page</option>
+                <option value="aiml-iot">AI/ML &amp; IOT</option>
+                <option value="custom">+ Custom Category</option>
+              </select>
+            </div>
+            <div class="col-md-6 admin-form-group">
+              <label for="formCategoryLabel" class="admin-form-label">Category Label Display</label>
+              <input type="text" class="admin-input ps-3" id="formCategoryLabel" placeholder="e.g. Full Stack" value="Wordpress">
+            </div>
+          </div>
+
+          <!-- Live URL / Link -->
+          <div class="admin-form-group">
+            <label for="formProjectUrl" class="admin-form-label">Live Project / Demo URL <span class="text-danger">*</span></label>
+            <input type="text" class="admin-input ps-3" id="formProjectUrl" placeholder="https://example.com or GitHub repo link" required>
+          </div>
+
+          <!-- Tags / Tech Stack -->
+          <div class="admin-form-group">
+            <label for="formProjectTags" class="admin-form-label">Tech Stack / Tags (Comma-separated)</label>
+            <input type="text" class="admin-input ps-3" id="formProjectTags" placeholder="e.g. Python, YOLOv8, Streamlit, OpenCV">
+            <!-- Dynamic Live Pill Preview -->
+            <div class="d-flex flex-wrap gap-1 mt-2" id="formPillsPreview"></div>
+          </div>
+
+          <!-- Project Description -->
+          <div class="admin-form-group">
+            <label for="formProjectDesc" class="admin-form-label">Project Description</label>
+            <textarea class="admin-input ps-3" id="formProjectDesc" rows="3" placeholder="Brief summary of the architecture, features, and results..."></textarea>
+          </div>
+
+          <!-- Project Image (URL or Local File Upload) -->
+          <div class="admin-form-group">
+            <label class="admin-form-label">Project Image</label>
+            <div class="input-group mb-2">
+              <input type="text" class="admin-input ps-3" id="formProjectImageUrl" placeholder="Image URL or assets/images/... path">
+            </div>
+            <div class="d-flex align-items-center gap-2 mb-2">
+              <span class="text-muted small">OR Upload local image:</span>
+              <input type="file" id="formProjectImageFile" accept="image/*" class="d-none">
+              <button type="button" class="btn-admin-outline py-1 px-3 small" id="triggerImageUploadBtn">
+                <i class="bi bi-upload"></i> Browse File
+              </button>
+            </div>
+            <!-- Image Preview Box -->
+            <div class="admin-img-preview-box" id="formImgPreviewBox">
+              <span class="admin-img-preview-empty" id="formImgEmptyText">No image preview</span>
+              <img src="" alt="Preview" id="formImgPreview" style="display: none;">
+            </div>
+          </div>
+
+          <!-- Featured Switch -->
+          <div class="form-check form-switch mt-3">
+            <input class="form-check-input" type="checkbox" role="switch" id="formProjectFeatured" checked>
+            <label class="form-check-label fw-semibold" for="formProjectFeatured">
+              Feature on Homepage (shows under "My recent work")
+            </label>
+          </div>
+
+        </div>
+
+        <div class="admin-modal-footer">
+          <button type="button" class="btn-admin-outline" id="cancelProjectModalBtn">Cancel</button>
+          <button type="submit" class="btn-admin-primary" style="width: auto;">
+            <i class="bi bi-check-lg"></i>
+            <span id="saveProjectBtnText">Save Project</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       4. GITHUB CLOUD SYNC MODAL
+       ========================================================================= -->
+  <div class="admin-modal-backdrop" id="githubSyncModalBackdrop">
+    <div class="admin-modal-card">
+      <div class="admin-modal-header">
+        <h3 class="admin-modal-title">
+          <i class="bi bi-github me-2"></i>Sync to GitHub
+        </h3>
+        <button type="button" class="admin-modal-close" id="closeGithubSyncModalBtn">
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
+
+      <div class="admin-modal-body">
+        <p class="text-muted small mb-3">
+          Commit the latest projects list directly to your public repository:
+          <strong class="text-white">mohammedashar35/Mohammed-Ashar-Portfolio</strong> (branch: <code class="text-info">main</code>, target: <code class="text-info">data/projects.json</code>).
+        </p>
+
+        <div class="admin-form-group">
+          <label for="ghRepoInput" class="admin-form-label">Repository</label>
+          <input type="text" class="admin-input ps-3" id="ghRepoInput" value="mohammedashar35/Mohammed-Ashar-Portfolio">
+        </div>
+
+        <div class="admin-form-group">
+          <label for="ghBranchInput" class="admin-form-label">Branch</label>
+          <input type="text" class="admin-input ps-3" id="ghBranchInput" value="main">
+        </div>
+
+        <div class="admin-form-group">
+          <label for="ghTokenInput" class="admin-form-label">GitHub Personal Access Token (PAT)</label>
+          <div class="admin-input-wrap">
+            <input type="password" class="admin-input ps-3 pe-5" id="ghTokenInput" placeholder="github_pat_... or ghp_...">
+            <button type="button" class="admin-input-password-toggle" id="toggleGhTokenView" title="Toggle token view">
+              <i class="bi bi-eye"></i>
+            </button>
+          </div>
+          <div class="form-text text-muted small mt-1">
+            <i class="bi bi-shield-lock me-1"></i>Token is saved securely in your browser's private storage and used only to push commits.
+          </div>
+        </div>
+
+        <div class="alert alert-info py-2 px-3 small d-none" id="ghSyncAlert"></div>
+      </div>
+
+      <div class="admin-modal-footer">
+        <button type="button" class="btn-admin-outline" id="cancelGithubSyncBtn">Close</button>
+        <button type="button" class="btn-admin-primary" id="startGithubSyncBtn" style="width: auto;">
+          <i class="bi bi-cloud-arrow-up"></i>
+          <span>Push to GitHub</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       5. NOTIFICATION TOAST
+       ========================================================================= -->
+  <div class="admin-toast" id="adminToast" role="alert" aria-live="assertive" aria-atomic="true">
+    <i class="bi bi-check-circle-fill fs-5" id="toastIcon"></i>
+    <span id="toastMessage">Action completed successfully.</span>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/projects.js"></script>
+  <script>
+    (function () {
+      'use strict';
+
+      // Required Admin Credentials
+      const AUTH_USERNAME = 'mohammedasharan35';
+      const AUTH_PASSWORD = 'Asharan35';
+      const AUTH_SESSION_KEY = 'ashar_admin_authenticated';
+      const GH_TOKEN_STORAGE_KEY = 'ashar_admin_gh_token';
+
+      // DOM Elements
+      const loginWrapper = document.getElementById('loginWrapper');
+      const dashboardWrapper = document.getElementById('dashboardWrapper');
+      const adminLoginForm = document.getElementById('adminLoginForm');
+      const adminUsername = document.getElementById('adminUsername');
+      const adminPassword = document.getElementById('adminPassword');
+      const loginErrorAlert = document.getElementById('loginErrorAlert');
+      const loginErrorMsg = document.getElementById('loginErrorMsg');
+      const rememberMeCheckbox = document.getElementById('rememberMeCheckbox');
+      const togglePasswordVisibility = document.getElementById('togglePasswordVisibility');
+      const passwordEyeIcon = document.getElementById('passwordEyeIcon');
+      const logoutBtn = document.getElementById('logoutBtn');
+
+      // Table & Metrics Elements
+      const tableBody = document.getElementById('adminProjectsTableBody');
+      const tableCountText = document.getElementById('tableCountText');
+      const statTotalProjects = document.getElementById('statTotalProjects');
+      const statFeaturedProjects = document.getElementById('statFeaturedProjects');
+      const statCategoriesCount = document.getElementById('statCategoriesCount');
+      const statGithubStatus = document.getElementById('statGithubStatus');
+      const adminTableSearch = document.getElementById('adminTableSearch');
+      const adminCategoryFilter = document.getElementById('adminCategoryFilter');
+
+      // Project Modal Elements
+      const projectModalBackdrop = document.getElementById('projectModalBackdrop');
+      const projectModalTitle = document.getElementById('projectModalTitle');
+      const openAddProjectModalBtn = document.getElementById('openAddProjectModalBtn');
+      const closeProjectModalBtn = document.getElementById('closeProjectModalBtn');
+      const cancelProjectModalBtn = document.getElementById('cancelProjectModalBtn');
+      const projectForm = document.getElementById('projectForm');
+      const formProjectId = document.getElementById('formProjectId');
+      const formProjectTitle = document.getElementById('formProjectTitle');
+      const formProjectCategory = document.getElementById('formProjectCategory');
+      const formCategoryLabel = document.getElementById('formCategoryLabel');
+      const formProjectUrl = document.getElementById('formProjectUrl');
+      const formProjectTags = document.getElementById('formProjectTags');
+      const formPillsPreview = document.getElementById('formPillsPreview');
+      const formProjectDesc = document.getElementById('formProjectDesc');
+      const formProjectImageUrl = document.getElementById('formProjectImageUrl');
+      const formProjectImageFile = document.getElementById('formProjectImageFile');
+      const triggerImageUploadBtn = document.getElementById('triggerImageUploadBtn');
+      const formImgPreview = document.getElementById('formImgPreview');
+      const formImgEmptyText = document.getElementById('formImgEmptyText');
+      const formProjectFeatured = document.getElementById('formProjectFeatured');
+      const saveProjectBtnText = document.getElementById('saveProjectBtnText');
+
+      // GitHub Sync Modal Elements
+      const githubSyncModalBackdrop = document.getElementById('githubSyncModalBackdrop');
+      const openGithubSyncModalBtn = document.getElementById('openGithubSyncModalBtn');
+      const closeGithubSyncModalBtn = document.getElementById('closeGithubSyncModalBtn');
+      const cancelGithubSyncBtn = document.getElementById('cancelGithubSyncBtn');
+      const ghRepoInput = document.getElementById('ghRepoInput');
+      const ghBranchInput = document.getElementById('ghBranchInput');
+      const ghTokenInput = document.getElementById('ghTokenInput');
+      const toggleGhTokenView = document.getElementById('toggleGhTokenView');
+      const startGithubSyncBtn = document.getElementById('startGithubSyncBtn');
+      const ghSyncAlert = document.getElementById('ghSyncAlert');
+
+      // Action Buttons
+      const exportJsonBtn = document.getElementById('exportJsonBtn');
+      const resetDefaultsBtn = document.getElementById('resetDefaultsBtn');
+      const adminToast = document.getElementById('adminToast');
+      const toastIcon = document.getElementById('toastIcon');
+      const toastMessage = document.getElementById('toastMessage');
+
+      let toastTimer = null;
+
+      // -----------------------------------------------------------------------
+      // AUTHENTICATION CONTROLLER
+      // -----------------------------------------------------------------------
+      function isAuthenticated() {
+        return sessionStorage.getItem(AUTH_SESSION_KEY) === 'true' ||
+          localStorage.getItem(AUTH_SESSION_KEY) === 'true';
+      }
+
+      function setAuthenticated(remember) {
+        sessionStorage.setItem(AUTH_SESSION_KEY, 'true');
+        if (remember) {
+          localStorage.setItem(AUTH_SESSION_KEY, 'true');
+        }
+      }
+
+      function clearAuth() {
+        sessionStorage.removeItem(AUTH_SESSION_KEY);
+        localStorage.removeItem(AUTH_SESSION_KEY);
+      }
+
+      function showLogin() {
+        loginWrapper.style.display = 'flex';
+        dashboardWrapper.style.display = 'none';
+        adminPassword.value = '';
+      }
+
+      function showDashboard() {
+        loginWrapper.style.display = 'none';
+        dashboardWrapper.style.display = 'block';
+        loadDashboardData();
+        checkGitHubTokenStatus();
+      }
+
+      // Password toggle
+      togglePasswordVisibility.addEventListener('click', function () {
+        const isPassword = adminPassword.type === 'password';
+        adminPassword.type = isPassword ? 'text' : 'password';
+        passwordEyeIcon.className = isPassword ? 'bi bi-eye-slash' : 'bi bi-eye';
+      });
+
+      // Login form submission
+      adminLoginForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const enteredUser = adminUsername.value.trim();
+        const enteredPass = adminPassword.value;
+
+        if (enteredUser === AUTH_USERNAME && enteredPass === AUTH_PASSWORD) {
+          loginErrorAlert.style.display = 'none';
+          setAuthenticated(rememberMeCheckbox.checked);
+          showToast('Welcome back, Mohammed Ashar!', 'success');
+          showDashboard();
+        } else {
+          loginErrorAlert.style.display = 'flex';
+          loginErrorMsg.textContent = 'Invalid credentials. Please verify your username and password.';
+          adminPassword.focus();
+        }
+      });
+
+      // Logout
+      logoutBtn.addEventListener('click', function () {
+        clearAuth();
+        showToast('Signed out successfully.', 'success');
+        showLogin();
+      });
+
+      // -----------------------------------------------------------------------
+      // TOAST NOTIFICATIONS
+      // -----------------------------------------------------------------------
+      function showToast(message, type = 'success') {
+        clearTimeout(toastTimer);
+        toastMessage.textContent = message;
+        adminToast.className = `admin-toast show ${type}`;
+
+        if (type === 'success') {
+          toastIcon.className = 'bi bi-check-circle-fill text-success fs-5';
+        } else if (type === 'error') {
+          toastIcon.className = 'bi bi-exclamation-circle-fill text-danger fs-5';
+        } else {
+          toastIcon.className = 'bi bi-info-circle-fill text-info fs-5';
+        }
+
+        toastTimer = setTimeout(() => {
+          adminToast.classList.remove('show');
+        }, 3500);
+      }
+
+      // -----------------------------------------------------------------------
+      // DATA & METRICS CONTROLLER
+      // -----------------------------------------------------------------------
+      function loadDashboardData() {
+        const projects = window.PortfolioProjects ? window.PortfolioProjects.getAllSync() : [];
+        updateMetrics(projects);
+        renderTableRows(projects);
+      }
+
+      function updateMetrics(projects) {
+        statTotalProjects.textContent = projects.length;
+        statFeaturedProjects.textContent = projects.filter(p => p.featured).length;
+
+        const uniqueCategories = new Set(projects.map(p => p.category));
+        statCategoriesCount.textContent = uniqueCategories.size;
+      }
+
+      function getCategoryBadgeClass(category) {
+        switch (category) {
+          case 'wordpress': return 'badge-wordpress';
+          case 'dashboard': return 'badge-dashboard';
+          case 'landingpage': return 'badge-landingpage';
+          case 'aiml-iot': return 'badge-aiml-iot';
+          default: return 'badge-custom';
+        }
+      }
+
+      function renderTableRows(projects) {
+        const search = (adminTableSearch.value || '').toLowerCase().trim();
+        const catFilter = adminCategoryFilter.value;
+
+        const filtered = projects.filter(p => {
+          const matchesCat = catFilter === 'all' || p.category === catFilter;
+          const matchesSearch = !search ||
+            (p.title || '').toLowerCase().includes(search) ||
+            (p.tags || '').toLowerCase().includes(search) ||
+            (p.description || '').toLowerCase().includes(search);
+          return matchesCat && matchesSearch;
+        });
+
+        tableCountText.textContent = `Showing ${filtered.length} of ${projects.length} projects`;
+
+        if (filtered.length === 0) {
+          tableBody.innerHTML = `
+            <tr>
+              <td colspan="6" class="text-center py-5 text-muted">
+                <i class="bi bi-folder-x fs-1 d-block mb-2"></i>
+                No matching projects found.
+              </td>
+            </tr>
+          `;
+          return;
+        }
+
+        tableBody.innerHTML = filtered.map(p => {
+          const badgeClass = getCategoryBadgeClass(p.category);
+          const pillsHtml = (p.pills || [])
+            .slice(0, 3)
+            .map(tag => `<span class="admin-pill-tag">${escapeHtml(tag)}</span>`)
+            .join(' ');
+
+          const isFeatured = Boolean(p.featured);
+          const featuredStarClass = isFeatured ? 'bi-star-fill active' : 'bi-star inactive';
+          const featuredTitle = isFeatured ? 'Featured on Homepage (Click to unfeature)' : 'Not featured (Click to feature on home)';
+
+          return `
+            <tr data-id="${p.id}">
+              <td>
+                <img src="${escapeHtml(p.image || 'assets/images/Ashar_logo.png')}"
+                     alt="${escapeHtml(p.title)}" class="project-thumb-preview"
+                     onerror="this.onerror=null;this.src='assets/images/Ashar_logo.png';">
+              </td>
+              <td>
+                <a href="${escapeHtml(p.url || '#')}" target="_blank" class="project-title-link">
+                  ${escapeHtml(p.title)} <i class="bi bi-arrow-up-right small text-muted"></i>
+                </a>
+                <span class="small text-muted d-block text-truncate" style="max-width: 280px;">${escapeHtml(p.description || '')}</span>
+              </td>
+              <td>
+                <span class="project-category-badge ${badgeClass}">${escapeHtml(p.categoryLabel || p.category)}</span>
+              </td>
+              <td>
+                <div class="admin-pills-wrap">${pillsHtml}</div>
+              </td>
+              <td class="text-center">
+                <i class="bi ${featuredStarClass} admin-featured-toggle" data-action="toggle-featured" data-id="${p.id}" title="${featuredTitle}"></i>
+              </td>
+              <td>
+                <div class="admin-action-btn-group justify-content-end">
+                  <button type="button" class="btn-icon-action" data-action="edit" data-id="${p.id}" title="Edit Project">
+                    <i class="bi bi-pencil"></i>
+                  </button>
+                  <a href="${escapeHtml(p.url || '#')}" target="_blank" class="btn-icon-action" title="Visit Live Site">
+                    <i class="bi bi-box-arrow-up-right"></i>
+                  </a>
+                  <button type="button" class="btn-icon-action delete" data-action="delete" data-id="${p.id}" title="Delete Project">
+                    <i class="bi bi-trash3"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          `;
+        }).join('');
+      }
+
+      function escapeHtml(str) {
+        if (!str) return '';
+        return String(str).replace(/[&<>'"]/g, tag => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[tag] || tag));
+      }
+
+      // Search & Category Filters
+      adminTableSearch.addEventListener('input', () => loadDashboardData());
+      adminCategoryFilter.addEventListener('change', () => loadDashboardData());
+
+      // Table Row Actions (Event Delegation)
+      tableBody.addEventListener('click', function (e) {
+        const toggleBtn = e.target.closest('[data-action="toggle-featured"]');
+        if (toggleBtn) {
+          const id = toggleBtn.getAttribute('data-id');
+          const isNowFeatured = window.PortfolioProjects.toggleFeatured(id);
+          showToast(isNowFeatured ? 'Project featured on Homepage.' : 'Project removed from Homepage features.', 'success');
+          loadDashboardData();
+          return;
+        }
+
+        const editBtn = e.target.closest('[data-action="edit"]');
+        if (editBtn) {
+          const id = editBtn.getAttribute('data-id');
+          openEditModal(id);
+          return;
+        }
+
+        const deleteBtn = e.target.closest('[data-action="delete"]');
+        if (deleteBtn) {
+          const id = deleteBtn.getAttribute('data-id');
+          const projects = window.PortfolioProjects.getAllSync();
+          const target = projects.find(p => p.id === id);
+          if (confirm(`Are you sure you want to delete "${target ? target.title : 'this project'}"?`)) {
+            window.PortfolioProjects.delete(id);
+            showToast('Project deleted successfully.', 'success');
+            loadDashboardData();
+          }
+        }
+      });
+
+      // -----------------------------------------------------------------------
+      // ADD / EDIT PROJECT MODAL CONTROLLER
+      // -----------------------------------------------------------------------
+      function openAddModal() {
+        formProjectId.value = '';
+        projectModalTitle.textContent = 'Add New Project';
+        saveProjectBtnText.textContent = 'Save Project';
+        projectForm.reset();
+        formCategoryLabel.value = 'Wordpress';
+        formProjectFeatured.checked = true;
+        updatePillsPreview('');
+        updateImagePreview('');
+        projectModalBackdrop.style.display = 'flex';
+        formProjectTitle.focus();
+      }
+
+      function openEditModal(id) {
+        const projects = window.PortfolioProjects.getAllSync();
+        const project = projects.find(p => p.id === id);
+        if (!project) return;
+
+        formProjectId.value = project.id;
+        projectModalTitle.textContent = 'Edit Project: ' + project.title;
+        saveProjectBtnText.textContent = 'Update Project';
+
+        formProjectTitle.value = project.title || '';
+        
+        // Category selection
+        const knownCategories = ['wordpress', 'dashboard', 'landingpage', 'aiml-iot'];
+        if (knownCategories.includes(project.category)) {
+          formProjectCategory.value = project.category;
+        } else {
+          formProjectCategory.value = 'custom';
+        }
+        formCategoryLabel.value = project.categoryLabel || project.category || '';
+        formProjectUrl.value = project.url || '';
+        formProjectTags.value = project.tags || (project.pills ? project.pills.join(', ') : '');
+        formProjectDesc.value = project.description || '';
+        formProjectImageUrl.value = project.image || '';
+        formProjectFeatured.checked = Boolean(project.featured);
+
+        updatePillsPreview(formProjectTags.value);
+        updateImagePreview(project.image || '');
+
+        projectModalBackdrop.style.display = 'flex';
+      }
+
+      function closeProjectModal() {
+        projectModalBackdrop.style.display = 'none';
+      }
+
+      openAddProjectModalBtn.addEventListener('click', openAddModal);
+      closeProjectModalBtn.addEventListener('click', closeProjectModal);
+      cancelProjectModalBtn.addEventListener('click', closeProjectModal);
+
+      // Category change updates category label default
+      formProjectCategory.addEventListener('change', function () {
+        const val = this.value;
+        if (val === 'wordpress') formCategoryLabel.value = 'Wordpress';
+        else if (val === 'dashboard') formCategoryLabel.value = 'Dashboard UI';
+        else if (val === 'landingpage') formCategoryLabel.value = 'Landing Page';
+        else if (val === 'aiml-iot') formCategoryLabel.value = 'AI/ML & IOT';
+        else formCategoryLabel.value = '';
+      });
+
+      // Tags input dynamic live pills preview
+      formProjectTags.addEventListener('input', function () {
+        updatePillsPreview(this.value);
+      });
+
+      function updatePillsPreview(tagsStr) {
+        const tags = tagsStr.split(',').map(s => s.trim()).filter(Boolean);
+        if (tags.length === 0) {
+          formPillsPreview.innerHTML = '<span class="text-muted small">Type tags above to preview pill badges</span>';
+          return;
+        }
+        formPillsPreview.innerHTML = tags.map(t => `<span class="work-pill">${escapeHtml(t)}</span>`).join('');
+      }
+
+      // Image URL input live preview
+      formProjectImageUrl.addEventListener('input', function () {
+        updateImagePreview(this.value);
+      });
+
+      // Image upload handling
+      triggerImageUploadBtn.addEventListener('click', () => formProjectImageFile.click());
+      formProjectImageFile.addEventListener('change', function (e) {
+        const file = e.target.files[0];
+        if (!file) return;
+
+        const reader = new FileReader();
+        reader.onload = function (evt) {
+          const dataUrl = evt.target.result;
+          formProjectImageUrl.value = dataUrl;
+          updateImagePreview(dataUrl);
+          showToast('Image uploaded and previewed.', 'info');
+        };
+        reader.readAsDataURL(file);
+      });
+
+      function updateImagePreview(src) {
+        if (src && src.trim()) {
+          formImgPreview.src = src;
+          formImgPreview.style.display = 'block';
+          formImgEmptyText.style.display = 'none';
+        } else {
+          formImgPreview.src = '';
+          formImgPreview.style.display = 'none';
+          formImgEmptyText.style.display = 'block';
+        }
+      }
+
+      // Project Form Submission (Add or Update)
+      projectForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const id = formProjectId.value;
+        const title = formProjectTitle.value.trim();
+        let category = formProjectCategory.value;
+        const categoryLabel = formCategoryLabel.value.trim() || 'Project';
+        if (category === 'custom') {
+          category = categoryLabel.toLowerCase().replace(/[^a-z0-9]/g, '-');
+        }
+
+        const url = formProjectUrl.value.trim();
+        const tags = formProjectTags.value.trim();
+        const description = formProjectDesc.value.trim();
+        const image = formProjectImageUrl.value.trim() || 'assets/images/Ashar_logo.png';
+        const featured = formProjectFeatured.checked;
+
+        const pills = tags.split(',').map(s => s.trim()).filter(Boolean);
+
+        const projectData = {
+          title,
+          category,
+          categoryLabel,
+          url,
+          tags,
+          pills,
+          description,
+          image,
+          imageAlt: title,
+          featured
+        };
+
+        if (id) {
+          // Update existing
+          window.PortfolioProjects.update(id, projectData);
+          showToast(`Updated "${title}" successfully.`, 'success');
+        } else {
+          // Add new
+          window.PortfolioProjects.add(projectData);
+          showToast(`Added "${title}" to your portfolio!`, 'success');
+        }
+
+        closeProjectModal();
+        loadDashboardData();
+      });
+
+      // -----------------------------------------------------------------------
+      // GITHUB CLOUD SYNC CONTROLLER
+      // -----------------------------------------------------------------------
+      function checkGitHubTokenStatus() {
+        const token = localStorage.getItem(GH_TOKEN_STORAGE_KEY);
+        if (token) {
+          statGithubStatus.textContent = 'Connected';
+          statGithubStatus.classList.remove('text-muted');
+          statGithubStatus.classList.add('text-success');
+        } else {
+          statGithubStatus.textContent = 'Not Connected';
+          statGithubStatus.classList.remove('text-success');
+          statGithubStatus.classList.add('text-muted');
+        }
+      }
+
+      function openGithubSyncModal() {
+        const savedToken = localStorage.getItem(GH_TOKEN_STORAGE_KEY) || '';
+        ghTokenInput.value = savedToken;
+        ghSyncAlert.className = 'alert alert-info py-2 px-3 small d-none';
+        githubSyncModalBackdrop.style.display = 'flex';
+      }
+
+      function closeGithubSyncModal() {
+        githubSyncModalBackdrop.style.display = 'none';
+      }
+
+      openGithubSyncModalBtn.addEventListener('click', openGithubSyncModal);
+      closeGithubSyncModalBtn.addEventListener('click', closeGithubSyncModal);
+      cancelGithubSyncBtn.addEventListener('click', closeGithubSyncModal);
+
+      toggleGhTokenView.addEventListener('click', function () {
+        const isPassword = ghTokenInput.type === 'password';
+        ghTokenInput.type = isPassword ? 'text' : 'password';
+        this.innerHTML = isPassword ? '<i class="bi bi-eye-slash"></i>' : '<i class="bi bi-eye"></i>';
+      });
+
+      startGithubSyncBtn.addEventListener('click', async function () {
+        const token = ghTokenInput.value.trim();
+        const repo = ghRepoInput.value.trim() || 'mohammedashar35/Mohammed-Ashar-Portfolio';
+        const branch = ghBranchInput.value.trim() || 'main';
+
+        if (!token) {
+          ghSyncAlert.className = 'alert alert-warning py-2 px-3 small d-block';
+          ghSyncAlert.textContent = 'Please enter your GitHub Personal Access Token to commit changes.';
+          ghTokenInput.focus();
+          return;
+        }
+
+        // Save token to localStorage for convenience
+        localStorage.setItem(GH_TOKEN_STORAGE_KEY, token);
+        checkGitHubTokenStatus();
+
+        startGithubSyncBtn.disabled = true;
+        startGithubSyncBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-1"></span> Syncing...';
+        ghSyncAlert.className = 'alert alert-info py-2 px-3 small d-block';
+        ghSyncAlert.textContent = 'Contacting GitHub REST API and pushing data/projects.json...';
+
+        try {
+          const result = await window.PortfolioProjects.syncToGitHub(token, repo, branch);
+          ghSyncAlert.className = 'alert alert-success py-2 px-3 small d-block';
+          ghSyncAlert.innerHTML = `<i class="bi bi-check-circle-fill me-1"></i> Success! Committed to GitHub repository (${branch} branch). Commit SHA: <code>${result.commit.sha.substring(0, 7)}</code>.`;
+          showToast('Changes committed directly to GitHub repository!', 'success');
+        } catch (err) {
+          ghSyncAlert.className = 'alert alert-danger py-2 px-3 small d-block';
+          ghSyncAlert.innerHTML = `<i class="bi bi-exclamation-triangle-fill me-1"></i> Sync Failed: ${escapeHtml(err.message)}`;
+          showToast('GitHub Sync Failed. Check token permissions.', 'error');
+        } finally {
+          startGithubSyncBtn.disabled = false;
+          startGithubSyncBtn.innerHTML = '<i class="bi bi-cloud-arrow-up"></i> <span>Push to GitHub</span>';
+        }
+      });
+
+      // -----------------------------------------------------------------------
+      // EXPORT & RESET CONTROLLERS
+      // -----------------------------------------------------------------------
+      exportJsonBtn.addEventListener('click', function () {
+        const projects = window.PortfolioProjects.getAllSync();
+        const blob = new Blob([JSON.stringify(projects, null, 2)], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'projects.json';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+        showToast('Downloaded projects.json backup.', 'info');
+      });
+
+      resetDefaultsBtn.addEventListener('click', function () {
+        if (confirm('Are you sure you want to reset all projects back to the original 14 portfolio items?')) {
+          window.PortfolioProjects.resetToDefaults();
+          showToast('Portfolio projects reset to default.', 'success');
+          loadDashboardData();
+        }
+      });
+
+      // -----------------------------------------------------------------------
+      // INITIALIZATION
+      // -----------------------------------------------------------------------
+      if (isAuthenticated()) {
+        showDashboard();
+      } else {
+        showLogin();
+      }
+
+    })();
+  </script>
+</body>
+
+</html>
