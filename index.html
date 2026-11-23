@@ -43,20 +43,25 @@
   <div class="site-preloader" id="sitePreloader">
     <div class="preloader-content">
       <div class="preloader-orbit-wrap">
-        <div class="preloader-orbit-track"></div>
-        <svg class="preloader-orbit-svg" viewBox="0 0 180 180">
+        <svg class="preloader-orbit-svg" viewBox="0 0 220 220">
           <defs>
-            <linearGradient id="preloaderOrbitGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.15" />
-              <stop offset="60%" stop-color="#2563eb" stop-opacity="0.8" />
-              <stop offset="100%" stop-color="#00d2ff" stop-opacity="1" />
+            <linearGradient id="orbitArcGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.1" />
+              <stop offset="50%" stop-color="#1d4ed8" stop-opacity="0.75" />
+              <stop offset="100%" stop-color="#00c0ff" stop-opacity="1" />
             </linearGradient>
           </defs>
-          <circle class="preloader-orbit-path" cx="90" cy="90" r="84" />
+          <!-- Faint Static Outer Orbit Track -->
+          <circle cx="110" cy="110" r="96" fill="none" stroke="#e8edf5" stroke-width="1.3" />
+          <!-- Rotating Connected Arc and Concentric Target Dot -->
+          <g class="preloader-orbit-spinner">
+            <path d="M 85.15 17.27 A 96 96 0 0 1 201.30 139.67" fill="none" stroke="url(#orbitArcGrad)" stroke-width="2.6" stroke-linecap="round" />
+            <!-- Concentric Bullseye Marker at the Tip -->
+            <circle cx="201.30" cy="139.67" r="11" fill="rgba(0, 192, 255, 0.22)" />
+            <circle cx="201.30" cy="139.67" r="8" fill="#ffffff" stroke="#00c0ff" stroke-width="2" />
+            <circle cx="201.30" cy="139.67" r="4.2" fill="#00c0ff" />
+          </g>
         </svg>
-        <div class="preloader-dot-orbit">
-          <div class="preloader-orbiting-dot"></div>
-        </div>
         <div class="preloader-center-logo">
           <img src="assets/images/Ashar_logo.png" alt="MD Ashar Logo" class="preloader-logo-img">
         </div>

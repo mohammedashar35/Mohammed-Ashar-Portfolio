@@ -1,7 +1,7 @@
 /**
  * MOHAMMED ASHAR - SIGNATURE PAGE PRELOADER ENGINE
- * Increments progress bar and percentage (0% -> 100%) smoothly.
- * Fades out gracefully upon window load.
+ * Smooth progression ticker from 0% -> 98% -> 100%.
+ * Provides smooth, reliable loading feel matching user reference.
  */
 
 (function () {
@@ -14,30 +14,34 @@
 
     if (!preloader || !progressBar || !percentText) return;
 
-    let currentProgress = 0;
-    let targetProgress = 15;
-    let isWindowLoaded = false;
-    let intervalId = null;
+    let progress = 0;
+    let isComplete = false;
 
-    function updateDisplay(val) {
-      const rounded = Math.min(100, Math.floor(val));
-      progressBar.style.width = rounded + '%';
+    function setProgress(val) {
+      progress = Math.min(100, Math.max(0, val));
+      const rounded = Math.floor(progress);
+      progressBar.style.width = progress + '%';
       percentText.textContent = `LOADING... ${rounded}%`;
     }
 
-    // Smooth increment ticker
-    intervalId = setInterval(function () {
-      if (currentProgress < targetProgress) {
-        currentProgress += (targetProgress - currentProgress) * 0.18 + 0.4;
-        if (currentProgress > targetProgress) currentProgress = targetProgress;
-        updateDisplay(currentProgress);
+    // Smooth counter animation
+    const startTime = performance.now();
+    const minDuration = 1300; // Minimum 1.3s so animation is visible and smooth
+
+    function tick(now) {
+      const elapsed = now - startTime;
+      const timeProgress = Math.min(1, elapsed / minDuration);
+
+      // Realistic ease-out curve
+      let currentVal = timeProgress * 95;
+      
+      if (isComplete && elapsed >= minDuration) {
+        currentVal = 95 + (Math.min(1, (elapsed - minDuration) / 250)) * 5;
       }
 
-      if (currentProgress >= 100) {
-        clearInterval(intervalId);
-        updateDisplay(100);
+      setProgress(currentVal);
 
-        // Pause briefly at 100% so user sees completion
+      if (progress >= 100) {
         setTimeout(function () {
           preloader.classList.add('fade-out');
           document.body.classList.remove('preloader-active');
@@ -46,28 +50,27 @@
             if (preloader.parentNode) {
               preloader.parentNode.removeChild(preloader);
             }
-          }, 600);
+          }, 650);
         }, 180);
+      } else {
+        requestAnimationFrame(tick);
       }
-    }, 20);
+    }
 
-    // Progression checkpoints
-    setTimeout(() => { if (!isWindowLoaded) targetProgress = 35; }, 150);
-    setTimeout(() => { if (!isWindowLoaded) targetProgress = 65; }, 400);
-    setTimeout(() => { if (!isWindowLoaded) targetProgress = 88; }, 750);
+    requestAnimationFrame(tick);
 
-    // Window loaded checkpoint
-    function finishLoading() {
-      isWindowLoaded = true;
-      targetProgress = 100;
+    function onReady() {
+      // Allow minDuration before completing to 100%
+      setTimeout(function () {
+        isComplete = true;
+      }, Math.max(0, minDuration - (performance.now() - startTime)));
     }
 
     if (document.readyState === 'complete') {
-      finishLoading();
+      onReady();
     } else {
-      window.addEventListener('load', finishLoading);
-      // Fallback maximum timeout of 2.2s in case external assets lag
-      setTimeout(finishLoading, 2200);
+      window.addEventListener('load', onReady);
+      setTimeout(onReady, 2500); // Safety fallback
     }
   }
 

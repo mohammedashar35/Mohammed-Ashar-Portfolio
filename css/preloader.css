@@ -1,7 +1,14 @@
 /**
  * MOHAMMED ASHAR - SIGNATURE PAGE LOADER
- * Matches user reference: White background, central orbit ring with glowing cyan dot,
- * MD Ashar logo, uppercase title, gradient pill progress bar, percentage counter, and bottom slashes.
+ * Exact match to Reference Images:
+ * - Pure white background (#ffffff)
+ * - Delicate faint orbit track ring (#e6edf5)
+ * - Connected rotating gradient arc with concentric cyan target dot at the tip
+ * - Centered official MD ASHAR logo
+ * - Bold uppercase "MD ASHAR" title (Outfit, wide tracking)
+ * - Gradient capsule progress bar (#2563eb to #00d2ff)
+ * - "LOADING... X%" status text
+ * - Bottom accent divider: — // —
  */
 
 .site-preloader {
@@ -10,14 +17,15 @@
   width: 100%;
   height: 100%;
   background-color: #ffffff;
-  z-index: 9999999;
+  z-index: 99999999;
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 1;
   visibility: visible;
-  transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   user-select: none;
+  -webkit-font-smoothing: antialiased;
 }
 
 .site-preloader.fade-out {
@@ -37,82 +45,50 @@
 }
 
 /* --------------------------------------------------------------------------
-   1. CIRCULAR ORBIT RING & LOGO
+   1. ORBIT RING & CENTER LOGO
    -------------------------------------------------------------------------- */
 .preloader-orbit-wrap {
   position: relative;
-  width: 180px;
-  height: 180px;
+  width: 220px;
+  height: 220px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 2.25rem;
+  margin-bottom: 2rem;
 }
 
-/* Faint static track ring */
-.preloader-orbit-track {
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  border: 1.2px solid rgba(226, 232, 240, 0.9);
-}
-
-/* Spinning SVG Arc */
+/* SVG containing both the faint track, the rotating arc, and the concentric dot */
 .preloader-orbit-svg {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  animation: preloaderSpin 2.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-  transform-origin: center center;
+  overflow: visible;
 }
 
-.preloader-orbit-path {
-  fill: none;
-  stroke: url(#preloaderOrbitGradient);
-  stroke-width: 2.2;
-  stroke-dasharray: 140 380;
-  stroke-linecap: round;
-}
-
-/* Rotating container for the orbiting cyan dot */
-.preloader-dot-orbit {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  animation: preloaderSpin 2.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-  pointer-events: none;
-}
-
-.preloader-orbiting-dot {
-  position: absolute;
-  top: 50%;
-  right: -5px;
-  transform: translateY(-50%);
-  width: 11px;
-  height: 11px;
-  background: #00d2ff;
-  border-radius: 50%;
-  box-shadow: 0 0 12px #00d2ff, 0 0 0 2.5px #ffffff, 0 0 0 4.5px rgba(0, 210, 255, 0.35);
+/* Rotating group: locks arc and concentric dot together with zero desync */
+.preloader-orbit-spinner {
+  transform-origin: 110px 110px;
+  animation: preloaderSpin 2.4s linear infinite;
 }
 
 /* Center Logo */
 .preloader-center-logo {
   position: relative;
   z-index: 2;
-  width: 95px;
-  height: 95px;
+  width: 115px;
+  height: 65px;
   display: flex;
   align-items: center;
   justify-content: center;
+  pointer-events: none;
 }
 
 .preloader-logo-img {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
-  filter: drop-shadow(0 2px 8px rgba(15, 23, 42, 0.06));
+  filter: drop-shadow(0 2px 6px rgba(15, 23, 42, 0.05));
 }
 
 /* --------------------------------------------------------------------------
@@ -120,22 +96,22 @@
    -------------------------------------------------------------------------- */
 .preloader-title {
   font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   font-weight: 800;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.32em;
   color: #0b0f19;
   text-transform: uppercase;
-  margin: 0 0 1.25rem 0;
-  text-indent: 0.22em; /* Centers letter-spaced text perfectly */
+  margin: 0 0 1.35rem 0;
+  text-indent: 0.32em; /* Offsets letter-spacing so text is geometrically centered */
 }
 
 /* --------------------------------------------------------------------------
    3. HORIZONTAL PILL PROGRESS BAR
    -------------------------------------------------------------------------- */
 .preloader-progress-track {
-  width: 210px;
+  width: 230px;
   height: 5.5px;
-  background: #f1f5f9;
+  background: #eef2f7;
   border-radius: 9999px;
   overflow: hidden;
   margin-bottom: 0.85rem;
@@ -145,10 +121,10 @@
 .preloader-progress-bar {
   height: 100%;
   width: 0%;
-  background: linear-gradient(90deg, #2563eb 0%, #00d2ff 100%);
+  background: linear-gradient(90deg, #1d4ed8 0%, #2563eb 45%, #00d2ff 100%);
   border-radius: 9999px;
-  transition: width 0.12s linear;
-  box-shadow: 0 0 8px rgba(0, 210, 255, 0.5);
+  transition: width 0.1s linear;
+  box-shadow: 0 0 8px rgba(0, 210, 255, 0.45);
 }
 
 /* --------------------------------------------------------------------------
@@ -158,11 +134,11 @@
   font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.22em;
   color: #64748b;
   text-transform: uppercase;
-  margin-bottom: 1.35rem;
-  text-indent: 0.18em;
+  margin-bottom: 1.45rem;
+  text-indent: 0.22em;
 }
 
 /* --------------------------------------------------------------------------
@@ -173,7 +149,7 @@
   align-items: center;
   justify-content: center;
   gap: 0.85rem;
-  width: 140px;
+  width: 130px;
 }
 
 .preloader-divider-line {
@@ -183,7 +159,7 @@
 }
 
 .preloader-divider-slashes {
-  color: #3b82f6;
+  color: #0284c7;
   font-family: 'Outfit', sans-serif;
   font-weight: 700;
   font-size: 0.95rem;
@@ -203,23 +179,23 @@
   }
 }
 
-/* Mobile Responsiveness */
+/* Responsive Adaptations */
 @media (max-width: 576px) {
   .preloader-orbit-wrap {
-    width: 150px;
-    height: 150px;
-    margin-bottom: 1.75rem;
+    width: 180px;
+    height: 180px;
+    margin-bottom: 1.6rem;
   }
   .preloader-center-logo {
-    width: 80px;
-    height: 80px;
+    width: 95px;
+    height: 55px;
   }
   .preloader-title {
-    font-size: 1.1rem;
-    margin-bottom: 1.1rem;
+    font-size: 1.15rem;
+    margin-bottom: 1.15rem;
   }
   .preloader-progress-track {
-    width: 180px;
+    width: 190px;
     height: 5px;
   }
 }
