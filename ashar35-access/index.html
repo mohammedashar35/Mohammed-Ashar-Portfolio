@@ -24,9 +24,48 @@
   <!-- Main & Admin CSS -->
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/admin.css">
+  <!-- Signature Page Preloader -->
+  <link rel="stylesheet" href="css/preloader.css">
 </head>
 
 <body class="admin-body">
+
+  <!-- ======================================================================
+       PAGE PRELOADER (Exact match to MD ASHAR Signature Loader)
+       ====================================================================== -->
+  <div class="site-preloader" id="sitePreloader">
+    <div class="preloader-content">
+      <div class="preloader-orbit-wrap">
+        <div class="preloader-orbit-track"></div>
+        <svg class="preloader-orbit-svg" viewBox="0 0 180 180">
+          <defs>
+            <linearGradient id="preloaderOrbitGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.15" />
+              <stop offset="60%" stop-color="#2563eb" stop-opacity="0.8" />
+              <stop offset="100%" stop-color="#00d2ff" stop-opacity="1" />
+            </linearGradient>
+          </defs>
+          <circle class="preloader-orbit-path" cx="90" cy="90" r="84" />
+        </svg>
+        <div class="preloader-dot-orbit">
+          <div class="preloader-orbiting-dot"></div>
+        </div>
+        <div class="preloader-center-logo">
+          <img src="assets/images/Ashar_logo.png" alt="MD Ashar Logo" class="preloader-logo-img">
+        </div>
+      </div>
+      <h2 class="preloader-title">MD ASHAR</h2>
+      <div class="preloader-progress-track">
+        <div class="preloader-progress-bar" id="preloaderProgressBar"></div>
+      </div>
+      <div class="preloader-percent-text" id="preloaderPercentText">LOADING... 0%</div>
+      <div class="preloader-accent-divider">
+        <span class="preloader-divider-line"></span>
+        <span class="preloader-divider-slashes">//</span>
+        <span class="preloader-divider-line"></span>
+      </div>
+    </div>
+  </div>
 
   <!-- =========================================================================
        1. LOGIN SECTION (Credentials: mohammedasharan35 / Asharan35)
@@ -356,7 +395,7 @@
       <div class="admin-modal-body">
         <p class="text-muted small mb-3">
           Commit the latest projects list directly to your public repository:
-          <strong class="text-white">mohammedashar35/Mohammed-Ashar-Portfolio</strong> (branch: <code class="text-info">main</code>, target: <code class="text-info">data/projects.json</code>).
+          <strong class="text-dark">mohammedashar35/Mohammed-Ashar-Portfolio</strong> (branch: <code class="text-info">main</code>, target: <code class="text-info">data/projects.json</code>).
         </p>
 
         <div class="admin-form-group">
@@ -405,6 +444,7 @@
 
   <!-- Scripts -->
   <script src="js/projects.js"></script>
+  <script src="js/preloader.js"></script>
   <script>
     (function () {
       'use strict';
